@@ -7,6 +7,7 @@ using System.Data;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using System;
+using System.Data.SqlClient;
 
 namespace START
 {
@@ -38,38 +39,61 @@ namespace START
         {
             int numerkart = Int32.Parse(etusername.Text);
             int pass2 = Int32.Parse(etpass.Text);
-            InsertInfo(numerkart, pass2);
+            //InsertInfo(numerkart, pass2);
+            Start();
            
 
         }
 
-        void InsertInfo(int userPar, int passPar)
+        public void Start()
         {
-            string connStr = "";
-            MySqlConnection conn = new MySqlConnection(connStr);
-            try
+
+            string connString = @"workstation id=testowa.mssql.somee.com;packet size=4096;user id=hyouka27_SQLLogin_1;pwd=1234567*;data source=testowa.mssql.somee.com;persist security info=False;initial catalog=testowa";
+            using (SqlConnection conn = new SqlConnection(connString))
             {
                 conn.Open();
-                tvTips.Text = "Połączono pomyślnie";
-                MySqlCommand cmd = new MySqlCommand("insert into User(numerkarty,haslo) values(@user,@pass)", conn);
-                cmd.Parameters.AddWithValue("@user", userPar);
-                cmd.Parameters.AddWithValue("@pass", passPar);
-                cmd.ExecuteNonQuery();
-                tvTips.Text = "Zalogowano pomyślnie";
-                
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO Persons(PersonID, LastName) VALUES(2,'TOMEK')", conn))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        //while (reader.Read())
+                        //{
+                        //    Console.WriteLine("ID: [{0}], Name: [{1}]", reader.GetValue(0), reader.GetValue(1));
+                        //}
+                    }
+                }
             }
-            catch (Exception ex)
-            {
-                tvTips.Text = ex.ToString();
-            }
-            finally
-            {
-                conn.Close();
-            }
+        }
+        //void InsertInfo(int userPar, int passPar)
+        //{
+        //    string connStr = "server=mysql32.mydevil.net;port=3306;database=m11808_baz;user=m11808_wed;password=Xamarin1@#";
+        //    MySqlConnection con = new MySqlConnection(connStr);
+
+           
+        //    try
+        //    {
+        //        if (con.State == ConnectionState.Closed) {
+        //            con.Open();
+        //            tvTips.Text = "Połączono pomyślnie";
+        //            MySqlCommand cmd = new MySqlCommand("insert into User(numerkarty,haslo) values(@user,@pass)", con);
+        //            cmd.Parameters.AddWithValue("@user", userPar);
+        //            cmd.Parameters.AddWithValue("@pass", passPar);
+        //            cmd.ExecuteNonQuery();
+        //            tvTips.Text = "Zalogowano pomyślnie";
+        //        }
+        //    }
+        //    catch (MySqlException ex)
+        //    {
+        //        throw ex;
+        //    }
+        //    finally
+        //    {
+        //        con.Close();
+        //    }
             
                 
             
         }
 
-    }
 }
+
