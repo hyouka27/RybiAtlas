@@ -46,11 +46,12 @@ namespace START
 
         public void Start()
         {
+            string connString = @"workstation id=testowa.mssql.somee.com;packet size=4096;user id=hyouka27_SQLLogin_1;pwd=1234567*;data source=testowa.mssql.somee.com;persist security info=False;initial catalog=testowa";
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 conn.Open();
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO Persons(PersonID, LastName) VALUES(2,'TOMEK')", conn))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO Persons(PersonID, LastName) VALUES(5,'TOMEK')", conn))
                 {
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
