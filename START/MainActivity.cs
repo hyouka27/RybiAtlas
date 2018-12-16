@@ -4,8 +4,6 @@ using Android.Support.V7.App;
 using Android.Runtime;
 using Android.Widget;
 using System.Data;
-using MySql.Data;
-using MySql.Data.MySqlClient;
 using System;
 using System.Data.SqlClient;
 
@@ -20,7 +18,8 @@ namespace START
         private EditText etpass;
         private Button btninsert;
         private TextView tvTips;
-        
+
+        public string connString { get; private set; }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -48,7 +47,6 @@ namespace START
         public void Start()
         {
 
-            string connString = @"workstation id=testowa.mssql.somee.com;packet size=4096;user id=hyouka27_SQLLogin_1;pwd=1234567*;data source=testowa.mssql.somee.com;persist security info=False;initial catalog=testowa";
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 conn.Open();
