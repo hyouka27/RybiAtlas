@@ -50,9 +50,10 @@ namespace START
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 conn.Open();
-                string commandText = "tu wpisz zapytanie @zm";
+                string commandText = "insert into User(numerkarty,haslo) values(@user,@pass)";
                 SqlCommand command = new SqlCommand(commandText, conn);
-                command.Parameters.Add("@zm", SqlDbType.Int);
+                command.Parameters.Add("@user", numerkart);
+               command.Parameters.Add("@pass", pass2);
 
                 //cmd.Parameters.AddWithValue("@user", numerkart);
                 // cmd.Parameters.AddWithValue("@pass", pass2);
