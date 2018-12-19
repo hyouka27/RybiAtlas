@@ -54,17 +54,17 @@ namespace START
                 SqlCommand command = new SqlCommand(commandText, conn);
                 command.Parameters.Add("@user", numerkart);
                command.Parameters.Add("@pass", pass2);
-
+                tvTips.Text = "Zalogowano pomyślnie";
                 //cmd.Parameters.AddWithValue("@user", numerkart);
                 // cmd.Parameters.AddWithValue("@pass", pass2);
                 {
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        //while (reader.Read())
-                        //{
-                        //    Console.WriteLine("ID: [{0}], Name: [{1}]", reader.GetValue(0), reader.GetValue(1));
-                        //}
-                    }
+                    //using (SqlDataReader reader = cmd.ExecuteReader())
+                    //{
+                    //    //while (reader.Read())
+                    //    //{
+                    //    //    Console.WriteLine("ID: [{0}], Name: [{1}]", reader.GetValue(0), reader.GetValue(1));
+                    //    //}
+                    //}
                 }
                 conn.Close();
             }
