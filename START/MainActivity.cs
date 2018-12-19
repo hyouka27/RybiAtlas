@@ -38,9 +38,36 @@ namespace START
         {
             int numerkart = Int32.Parse(etusername.Text);
             int pass2 = Int32.Parse(etpass.Text);
-            //InsertInfo(numerkart, pass2);
+            InsertInfo(numerkart, pass2);
             Start();
            
+
+        }
+
+        void InsertInfo(int numerkart, int pass2) {
+ 
+            string connString = @"workstation id=testowa.mssql.somee.com;packet size=4096;user id=hyouka27_SQLLogin_1;pwd=1234567*;data source=testowa.mssql.somee.com;persist security info=False;initial catalog=testowa";
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                conn.Open();
+                string commandText = "tu wpisz zapytanie @zm";
+                SqlCommand command = new SqlCommand(commandText, conn);
+                command.Parameters.Add("@zm", SqlDbType.Int);
+
+                //cmd.Parameters.AddWithValue("@user", numerkart);
+                // cmd.Parameters.AddWithValue("@pass", pass2);
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        //while (reader.Read())
+                        //{
+                        //    Console.WriteLine("ID: [{0}], Name: [{1}]", reader.GetValue(0), reader.GetValue(1));
+                        //}
+                    }
+                }
+                conn.Close();
+            }
+
 
         }
 
