@@ -43,8 +43,7 @@ namespace START
             string pass2 = pass.Text;
             InsertInfo2(numerkart, pass2);
         }
-
-        void InsertInfo2(int numerkart,string pass2)
+         void InsertInfo2(int numerkart, string pass2)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
             {
@@ -61,7 +60,7 @@ namespace START
                 }
                 catch
                 {
-                    info.Text = "Nie możesz się zalogować, popraw dane.";
+                    info.Text = "Błędny numer karty wędkarskiej";
                 }
                 finally
                 {
@@ -69,5 +68,7 @@ namespace START
                 }
             }
         }
+
+
     }
 }

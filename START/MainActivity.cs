@@ -6,6 +6,7 @@ using Android.Widget;
 using System.Data;
 using System;
 using System.Data.SqlClient;
+using Android.Content;
 
 namespace START
 {
@@ -28,7 +29,10 @@ namespace START
             btnrejestracja = FindViewById<Button>(Resource.Id.btnrejestracja);
             tvTips = FindViewById<TextView>(Resource.Id.tvTips);
             btninsert.Click += Btninsert_Click;
-            btnrejestracja.Click += Btnrejestracja_Click;
+            btnrejestracja.Click += delegate {
+            var rejestracja = new Intent(this, typeof(RejestracjaActivity));
+            StartActivity(rejestracja);
+            };
         }
 
         private void Btninsert_Click(object sender, System.EventArgs e)
@@ -44,10 +48,7 @@ namespace START
             Login nowy = new Login();
             nowy.Danelogin(numerkart, pass2);
 
-
-
         }
-
         void InsertInfo(int numerkart, string pass2)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
