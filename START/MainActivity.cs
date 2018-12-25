@@ -41,6 +41,11 @@ namespace START
             }
             string pass2 = etpass.Text;
             InsertInfo(numerkart, pass2);
+            Login nowy = new Login();
+            nowy.Danelogin(numerkart, pass2);
+
+
+
         }
 
         void InsertInfo(int numerkart, string pass2)
@@ -50,13 +55,29 @@ namespace START
                 conn.Open();
                 try
                 {
-                    string commandText = "insert into userI(numerkarty,haslo) values(@user,@pass)";
+                    string Output = "";
+                    string commandText = "select count(*) as cnt from userI WHERE numerkarty=@user AND haslo LIKE @pass";
                     SqlCommand command = new SqlCommand(commandText, conn);
                     command.Parameters.Add(new SqlParameter("user", numerkart));
                     command.Parameters.Add(new SqlParameter("pass", pass2));
                     command.ExecuteNonQuery();
-                    tvTips.Text = "Zalogowano pomyślnie";
-                    conn.Close();
+                    SqlDataReader czytaj = command.ExecuteReader();
+                    while (czytaj.Read())
+                    {
+                        Output = Output + czytaj.GetValue(0);
+                    }
+                    int test;
+                    test = Int32.Parse(Output);
+                    if (test == 1)
+                    {
+                        //tvTips.Text = Output;
+                        SetContentView(Resource.Layout.activity_okregi);
+                    }
+                    else
+                    {
+                        tvTips.Text = "Błędny login lub hasło";
+
+                    }
                 }
                 catch
                 {
@@ -78,7 +99,6 @@ namespace START
         private void Btnrejestracja_Click(object sender, System.EventArgs e)
         {
         SetContentView(Resource.Layout.activity_rejestracja);
-
         }
     }
 }

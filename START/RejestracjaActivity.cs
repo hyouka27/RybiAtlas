@@ -41,12 +41,10 @@ namespace START
                 numerkart = Int32.Parse(nrkarty.Text);
             }
             string pass2 = pass.Text;
-            InsertInfo(numerkart, pass2);
-            SetContentView(Resource.Layout.activity_okregi);
-
+            InsertInfo2(numerkart, pass2);
         }
 
-        void InsertInfo(int numerkart, string pass2)
+        void InsertInfo2(int numerkart,string pass2)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
             {
@@ -58,7 +56,6 @@ namespace START
                     command.Parameters.Add(new SqlParameter("user", numerkart));
                     command.Parameters.Add(new SqlParameter("pass", pass2));
                     command.ExecuteNonQuery();
-                    info.Text = "Zarejstrowano pomyślnie";
                     conn.Close();
                     SetContentView(Resource.Layout.activity_okregi);
                 }
@@ -69,12 +66,8 @@ namespace START
                 finally
                 {
                     conn.Close();
-                    SetContentView(Resource.Layout.activity_okregi);
                 }
             }
         }
-
-
-
     }
 }
