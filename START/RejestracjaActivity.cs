@@ -7,46 +7,74 @@ using Android.Views;
 using Android.Widget;
 using System;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace START
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
-   public class RejestracjaActivity :AppCompatActivity
+    public class RejestracjaActivity : AppCompatActivity
     {
-
         private EditText nrkarty;
         private EditText pass;
+        private TextView info;
         private Button btnrejinsert;
-        private Button button1;
-       
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_rejestracja);
-
             nrkarty = FindViewById<EditText>(Resource.Id.nrkarty);
             pass = FindViewById<EditText>(Resource.Id.Pass);
             btnrejinsert = FindViewById<Button>(Resource.Id.btnrejinsert);
-            button1 = FindViewById<Button>(Resource.Id.button1);
-
+            info = FindViewById<TextView>(Resource.Id.info);
             btnrejinsert.Click += Btnrejinsert_Click;
-            button1.Click += Button1_Click;
-          
+
         }
 
- 
+
         private void Btnrejinsert_Click(object sender, System.EventArgs e)
         {
-        //tutaj dodaj wysylanie danych do bazy
+            string numerkart1 = nrkarty.Text;
+            int numerkart;
+            if (int.TryParse(numerkart1, out numerkart))
+            {
+                numerkart = Int32.Parse(nrkarty.Text);
+            }
+            string pass2 = pass.Text;
+            InsertInfo(numerkart, pass2);
             SetContentView(Resource.Layout.activity_okregi);
+
         }
 
-        private void Button1_Click(object sender, System.EventArgs e)
+        void InsertInfo(int numerkart, string pass2)
         {
-            SetContentView(Resource.Layout.activity_okregi);
+            using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
+            {
+                conn.Open();
+                try
+                {
+                    string commandText = "insert into userI(numerkarty,haslo) values(@user,@pass)";
+                    SqlCommand command = new SqlCommand(commandText, conn);
+                    command.Parameters.Add(new SqlParameter("user", numerkart));
+                    command.Parameters.Add(new SqlParameter("pass", pass2));
+                    command.ExecuteNonQuery();
+                    info.Text = "Zarejstrowano pomyślnie";
+                    conn.Close();
+                    SetContentView(Resource.Layout.activity_okregi);
+                }
+                catch
+                {
+                    info.Text = "Nie możesz się zalogować, popraw dane.";
+                }
+                finally
+                {
+                    conn.Close();
+                    SetContentView(Resource.Layout.activity_okregi);
+                }
+            }
         }
 
-      
+
+
     }
 }

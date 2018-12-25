@@ -2399,8 +2399,8 @@ namespace START
 			// aapt resource value: 0x7f0800ab
 			public const int action_text = 2131230891;
 			
-			// aapt resource value: 0x7f0800b9
-			public const int actions = 2131230905;
+			// aapt resource value: 0x7f0800b8
+			public const int actions = 2131230904;
 			
 			// aapt resource value: 0x7f08005d
 			public const int activity_chooser_view_content = 2131230813;
@@ -2441,11 +2441,8 @@ namespace START
 			// aapt resource value: 0x7f080093
 			public const int btnrejestracja = 2131230867;
 			
-			// aapt resource value: 0x7f080099
-			public const int btnrejinsert = 2131230873;
-			
 			// aapt resource value: 0x7f08009a
-			public const int button1 = 2131230874;
+			public const int btnrejinsert = 2131230874;
 			
 			// aapt resource value: 0x7f080063
 			public const int buttonPanel = 2131230819;
@@ -2522,8 +2519,8 @@ namespace START
 			// aapt resource value: 0x7f080030
 			public const int end = 2131230768;
 			
-			// aapt resource value: 0x7f0800bb
-			public const int end_padder = 2131230907;
+			// aapt resource value: 0x7f0800ba
+			public const int end_padder = 2131230906;
 			
 			// aapt resource value: 0x7f08003f
 			public const int enterAlways = 2131230783;
@@ -2573,8 +2570,8 @@ namespace START
 			// aapt resource value: 0x7f080062
 			public const int icon = 2131230818;
 			
-			// aapt resource value: 0x7f0800ba
-			public const int icon_group = 2131230906;
+			// aapt resource value: 0x7f0800b9
+			public const int icon_group = 2131230905;
 			
 			// aapt resource value: 0x7f08003a
 			public const int ifRoom = 2131230778;
@@ -2582,8 +2579,8 @@ namespace START
 			// aapt resource value: 0x7f08005f
 			public const int image = 2131230815;
 			
-			// aapt resource value: 0x7f0800b6
-			public const int info = 2131230902;
+			// aapt resource value: 0x7f080099
+			public const int info = 2131230873;
 			
 			// aapt resource value: 0x7f080059
 			public const int italic = 2131230809;
@@ -2615,14 +2612,14 @@ namespace START
 			// aapt resource value: 0x7f08008b
 			public const int logowanie = 2131230859;
 			
-			// aapt resource value: 0x7f0800be
-			public const int masked = 2131230910;
+			// aapt resource value: 0x7f0800bd
+			public const int masked = 2131230909;
 			
 			// aapt resource value: 0x7f0800af
 			public const int media_actions = 2131230895;
 			
-			// aapt resource value: 0x7f0800bc
-			public const int message = 2131230908;
+			// aapt resource value: 0x7f0800bb
+			public const int message = 2131230907;
 			
 			// aapt resource value: 0x7f080031
 			public const int middle = 2131230769;
@@ -2645,8 +2642,8 @@ namespace START
 			// aapt resource value: 0x7f08001e
 			public const int normal = 2131230750;
 			
-			// aapt resource value: 0x7f0800b8
-			public const int notification_background = 2131230904;
+			// aapt resource value: 0x7f0800b7
+			public const int notification_background = 2131230903;
 			
 			// aapt resource value: 0x7f0800b2
 			public const int notification_main_column = 2131230898;
@@ -2684,8 +2681,8 @@ namespace START
 			// aapt resource value: 0x7f08004a
 			public const int right = 2131230794;
 			
-			// aapt resource value: 0x7f0800b7
-			public const int right_icon = 2131230903;
+			// aapt resource value: 0x7f0800b6
+			public const int right_icon = 2131230902;
 			
 			// aapt resource value: 0x7f0800b3
 			public const int right_side = 2131230899;
@@ -2888,8 +2885,8 @@ namespace START
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f0800bd
-			public const int visible = 2131230909;
+			// aapt resource value: 0x7f0800bc
+			public const int visible = 2131230908;
 			
 			// aapt resource value: 0x7f08003c
 			public const int withText = 2131230780;
