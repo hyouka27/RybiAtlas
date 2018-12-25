@@ -3,13 +3,15 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
 	<TextView
-        android:text="ZALOGUJ SIĘ"
+        android:text="ZAREJESTRUJ KARTĘ"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/logowanie" />
-    <TextView
+        android:id="@+id/rejestracja1" />
+
+	<TextView
         android:text="Numer karty"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
@@ -18,7 +20,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/etusername" />
+        android:id="@+id/nrkarty" />
     <TextView
         android:text="Hasło"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -29,27 +31,17 @@
         android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/etPass" />
-    <Button
-        android:text="Zaloguj się"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btninsert" />
-    <TextView
-        android:text="Wskazówki"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvTips" />
-	<TextView
-        android:text="Jeśli nie masz zarejestrowanej karty kliknij w poniższy guzik, aby ją zarejestrować."
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textViewrejestracja" />
-	 <Button
+        android:id="@+id/Pass" />
+	<Button
         android:text="Zarejestruj kartę"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnrejestracja" />
+        android:id="@+id/btnrejinsert" />
+	<Button
+		android:text="Button"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/button1" />
+	
+
 </LinearLayout>
