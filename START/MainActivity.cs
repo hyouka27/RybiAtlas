@@ -18,6 +18,7 @@ namespace START
         private Button btninsert;
         private TextView tvTips;
         private Button btnrejestracja;
+        private Button btnmenu;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -33,6 +34,8 @@ namespace START
             var rejestracja = new Intent(this, typeof(RejestracjaActivity));
             StartActivity(rejestracja);
             };
+
+         
         }
 
         private void Btninsert_Click(object sender, System.EventArgs e)
@@ -72,7 +75,7 @@ namespace START
                     if (test == 1)
                     {
                         //tvTips.Text = Output;
-                        SetContentView(Resource.Layout.activity_wyloguj);
+                        SetContentView(Resource.Layout.activity_konto);
                     }
                     else
                     {

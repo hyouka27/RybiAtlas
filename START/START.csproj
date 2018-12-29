@@ -77,11 +77,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RybyActivity.cs" />
     <Compile Include="UlubActivity.cs" />
-    <Compile Include="UlubrybaActivity.cs" />
     <Compile Include="WybranarybaActivity.cs" />
     <Compile Include="WybranelowiskoActivity.cs" />
     <Compile Include="WybranyokregActivity.cs" />
-    <Compile Include="WylogujActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -172,11 +170,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\activity_wybranaryba.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\activity_ulubryba.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

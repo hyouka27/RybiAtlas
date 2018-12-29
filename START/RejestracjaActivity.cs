@@ -56,7 +56,7 @@ namespace START
                     command.Parameters.Add(new SqlParameter("pass", pass2));
                     command.ExecuteNonQuery();
                     conn.Close();
-                    SetContentView(Resource.Layout.activity_wyloguj);
+                    SetContentView(Resource.Layout.activity_konto);
                 }
                 catch
                 {

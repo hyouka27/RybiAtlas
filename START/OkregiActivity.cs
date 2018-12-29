@@ -24,7 +24,7 @@ namespace START
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.activity_wyloguj);
+            SetContentView(Resource.Layout.activity_okregi);
 
 
             btnmenu.Click += delegate {

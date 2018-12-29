@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">START</string>
+  <string name="app_nameregul">REGULAMIN</string>
     <string name="action_settings">Settings</string>
 </resources>

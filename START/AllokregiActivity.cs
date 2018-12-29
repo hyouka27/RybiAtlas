@@ -18,19 +18,14 @@ namespace START
     public class AllokregiActivity :AppCompatActivity
     {
 
-        private Button btnmenu;
+        
         private RecyclerView listaall1;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.activity_wyloguj);
+            SetContentView(Resource.Layout.activity_allokregi);
 
-
-            btnmenu.Click += delegate {
-                var menu = new Intent(this, typeof(MenuActivity));
-                StartActivity(menu);
-            };
         }
 
     }

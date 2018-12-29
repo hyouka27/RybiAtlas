@@ -17,10 +17,18 @@ namespace START
     public class KontoActivity :AppCompatActivity
     {
 
+        private Button btnmenu;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_konto);
+
+            btnmenu.Click += delegate
+            {
+                var menu = new Intent(this, typeof(MenuActivity));
+                StartActivity(menu);
+            };
 
         }
 

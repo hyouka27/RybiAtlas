@@ -60,10 +60,6 @@ namespace START
                 StartActivity(ulub);
             };
 
-            btnwyloguj.Click += delegate {
-                var wyloguj = new Intent(this, typeof(WylogujActivity));
-                StartActivity(wyloguj);
-            };
 
 
         }

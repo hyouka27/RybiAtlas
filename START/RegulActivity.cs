@@ -13,7 +13,7 @@ using Android.Widget;
 
 namespace START
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
+    [Activity(Label = "@string/app_nameregul", Theme = "@style/AppTheme")]
     public class RegulActivity :AppCompatActivity
     {
         private Button btnmenu;
