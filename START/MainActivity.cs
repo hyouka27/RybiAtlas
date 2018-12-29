@@ -72,7 +72,7 @@ namespace START
                     if (test == 1)
                     {
                         //tvTips.Text = Output;
-                        SetContentView(Resource.Layout.activity_okregi);
+                        SetContentView(Resource.Layout.activity_wyloguj);
                     }
                     else
                     {

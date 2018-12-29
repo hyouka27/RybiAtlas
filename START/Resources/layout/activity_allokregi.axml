@@ -3,6 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
 	<Button
         android:text="MENU"
         android:layout_width="match_parent"
@@ -19,5 +20,6 @@
 		android:minHeight="50px"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:id="@+id/lista1" />
+		android:id="@+id/listaall1" />
+
 </LinearLayout>

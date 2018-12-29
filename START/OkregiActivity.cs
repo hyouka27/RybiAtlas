@@ -9,6 +9,7 @@ using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.V7.App;
+using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 
@@ -18,24 +19,24 @@ namespace START
     public class OkregiActivity : AppCompatActivity
     {
         private Button btnmenu;
-        private ListView lista1;
+        private RecyclerView lista1;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.activity_okregi);
+            SetContentView(Resource.Layout.activity_wyloguj);
 
 
-            btnmenu = FindViewById<Button>(Resource.Id.btnmenu);
-
-            btnmenu.Click += Btnmenu_Click;
-
+            btnmenu.Click += delegate {
+                var menu = new Intent(this, typeof(MenuActivity));
+                StartActivity(menu);
+            };
         }
 
         private void Btnmenu_Click(object sender, System.EventArgs e)
         {
 
-            SetContentView(Resource.Layout.activity_main);
+            SetContentView(Resource.Layout.activity_menu);
         }
 
         void Wyswietlokregi(int numerkart, string pass2)
