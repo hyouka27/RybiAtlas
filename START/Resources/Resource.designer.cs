@@ -2669,14 +2669,14 @@ namespace START
 			// aapt resource value: 0x7f080061
 			public const int list_item = 2131230817;
 			
+			// aapt resource value: 0x7f0800a5
+			public const int lista1 = 2131230885;
+			
 			// aapt resource value: 0x7f080097
 			public const int listaV = 2131230871;
 			
 			// aapt resource value: 0x7f08008c
 			public const int listaall1 = 2131230860;
-			
-			// aapt resource value: 0x7f0800a5
-			public const int listaokregi = 2131230885;
 			
 			// aapt resource value: 0x7f080098
 			public const int logowanie = 2131230872;
