@@ -16,6 +16,10 @@ namespace START
     {
         private EditText nrkarty;
         private EditText pass;
+        private EditText insimie;
+        private EditText insnazwisko;
+        private EditText instel;
+        private EditText insmail;
         private TextView info;
         private Button btnrejinsert;
 
@@ -25,6 +29,10 @@ namespace START
             SetContentView(Resource.Layout.activity_rejestracja);
             nrkarty = FindViewById<EditText>(Resource.Id.nrkarty);
             pass = FindViewById<EditText>(Resource.Id.Pass);
+            insimie = FindViewById<EditText>(Resource.Id.insimie);
+            insnazwisko = FindViewById<EditText>(Resource.Id.insnazwisko);
+            instel = FindViewById<EditText>(Resource.Id.instel);
+            insmail = FindViewById<EditText>(Resource.Id.insmail);
             btnrejinsert = FindViewById<Button>(Resource.Id.btnrejinsert);
             info = FindViewById<TextView>(Resource.Id.info);
             btnrejinsert.Click += Btnrejinsert_Click;
@@ -41,6 +49,7 @@ namespace START
                 numerkart = Int32.Parse(nrkarty.Text);
             }
             string pass2 = pass.Text;
+
             InsertInfo2(numerkart, pass2);
         }
          void InsertInfo2(int numerkart, string pass2)
