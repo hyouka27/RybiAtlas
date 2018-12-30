@@ -29,40 +29,8 @@ namespace START
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_menu);
-
-            btnkonto.Click += delegate {
-                var konto = new Intent(this, typeof(KontoActivity));
-                StartActivity(konto);
-            };
-
-            btnokregi.Click += delegate {
-                var okregi = new Intent(this, typeof(OkregiActivity));
-                StartActivity(okregi);
-            };
-
-            btnallokregi.Click += delegate {
-                var allokregi = new Intent(this, typeof(AllokregiActivity));
-                StartActivity(allokregi);
-            };
-
-            btnregul.Click += delegate {
-                var regul = new Intent(this, typeof(RegulActivity));
-                StartActivity(regul);
-            };
-
-            btnryby.Click += delegate {
-                var ryby = new Intent(this, typeof(RybyActivity));
-                StartActivity(ryby);
-            };
-
-            btnulub.Click += delegate {
-                var ulub = new Intent(this, typeof(UlubActivity));
-                StartActivity(ulub);
-            };
-
-
-
         }
 
+        
     }
 }

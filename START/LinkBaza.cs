@@ -16,6 +16,7 @@ namespace START
     public static class LinkBaza
     {
     public static int numer;
+    public static string lowsikobaza;
     public static string connString = @"workstation id=testowa.mssql.somee.com;packet size=4096;user id=hyouka27_SQLLogin_1;pwd=1234567*;data source=testowa.mssql.somee.com;persist security info=False;initial catalog=testowa";
     }
 }

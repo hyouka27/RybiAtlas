@@ -14,13 +14,11 @@ using Android.Widget;
 
 namespace START
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
     public class ListalowiskActivity : AppCompatActivity
     {
-        private Button btnmenu;
         private List<string> lowiska;
         private ListView listaV;
-
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -31,13 +29,7 @@ namespace START
             Lowsika(LinkBaza.numer);
             ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, lowiska);
             listaV.Adapter = adapter;
-
             listaV.ItemClick += ListaVClick;
-            //btnmenu.Click += delegate
-            //{
-            //    var menu = new Intent(this, typeof(MenuActivity));
-            //    StartActivity(menu);
-            //};
 
 
             void Lowsika(int numerkart)
@@ -49,13 +41,12 @@ namespace START
                     {
                         string commandText = "SELECT nazwalowiska FROM lowiska";
                         SqlCommand command = new SqlCommand(commandText, conn);
-                       // command.Parameters.Add(new SqlParameter("user", numerkart));
                         command.ExecuteNonQuery();
                         SqlDataReader czytaj = command.ExecuteReader();
                         foreach (var item in czytaj)
                             {
-                                int i = 0;
-                                lowiska.Add(czytaj.GetString(i));
+                                int i= 0;
+                            lowiska.Add(czytaj.GetString(i));
                                 i++;
                             }
                     }
@@ -72,10 +63,11 @@ namespace START
 
         private void ListaVClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            if (lowiska[e.Position] == "")
-            {
-                
-            }
+                var lowsiko = new Intent(this, typeof(WybranelowiskoActivity));
+                StartActivity(lowsiko);
+                string lowisko1 = lowiska[e.Position];
+                LinkBaza.lowsikobaza = lowisko1;
+                Toast.MakeText(this,lowisko1, ToastLength.Long).Show();
         }
     }
 }

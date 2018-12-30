@@ -10,7 +10,7 @@ using Android.Content;
 
 namespace START
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
         private EditText etusername;
@@ -72,26 +72,18 @@ namespace START
                     test = Int32.Parse(Output);
                     if (test == 1)
                     {
-                        //tvTips.Text = Output;
                             var konto = new Intent(this, typeof(KontoActivity));
                             StartActivity(konto);
                     }
                     else
                     {
-                        tvTips.Text = "Błędny login lub hasło";
+                        tvTips.Text = "Nie możesz się zalogować, popraw dane.";
 
                     }
                 }
                 catch
                 {
                     tvTips.Text = "Nie możesz się zalogować, popraw dane.";
-                    //using (SqlDataReader reader = cmd.ExecuteReader())
-                    //{
-                    //    //while (reader.Read())
-                    //    //{
-                    //    //    Console.WriteLine("ID: [{0}], Name: [{1}]", reader.GetValue(0), reader.GetValue(1));
-                    //    //}
-                    //}
                 }
                 finally
                 {
