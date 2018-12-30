@@ -42,6 +42,15 @@ namespace START
 
         private void Btnrejinsert_Click(object sender, System.EventArgs e)
         {
+            string imie = insimie.Text;
+            string nazwisko = insnazwisko.Text;
+            string tel1 = instel.Text;
+            int tel;
+            if (int.TryParse(tel1, out tel))
+            {
+                tel = Int32.Parse(instel.Text);
+            }
+            string mail = insmail.Text;
             string numerkart1 = nrkarty.Text;
             int numerkart;
             if (int.TryParse(numerkart1, out numerkart))
@@ -49,27 +58,32 @@ namespace START
                 numerkart = Int32.Parse(nrkarty.Text);
             }
             string pass2 = pass.Text;
-
-            InsertInfo2(numerkart, pass2);
+            LinkBaza.numer = numerkart;
+            InsertInfo2(numerkart,pass2,imie,nazwisko,tel,mail);
         }
-         void InsertInfo2(int numerkart, string pass2)
+         void InsertInfo2(int numerkart, string pass2,string imie,string nazwisko,int tel,string mail)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
             {
                 conn.Open();
                 try
                 {
-                    string commandText = "insert into userI(numerkarty,haslo) values(@user,@pass)";
+                    string commandText = "insert into userI(numerkarty,haslo,imie,nazwisko,telefon,email) values(@user,@pass,@imie,@nazwisko,@tel,@mail)";
                     SqlCommand command = new SqlCommand(commandText, conn);
                     command.Parameters.Add(new SqlParameter("user", numerkart));
                     command.Parameters.Add(new SqlParameter("pass", pass2));
+                    command.Parameters.Add(new SqlParameter("imie", imie));
+                    command.Parameters.Add(new SqlParameter("nazwisko", nazwisko));
+                    command.Parameters.Add(new SqlParameter("tel", tel));
+                    command.Parameters.Add(new SqlParameter("mail", mail));
                     command.ExecuteNonQuery();
                     conn.Close();
-                    SetContentView(Resource.Layout.activity_konto);
+                    var konto = new Intent(this, typeof(KontoActivity));
+                    StartActivity(konto);
                 }
                 catch
                 {
-                    info.Text = "Błędny numer karty wędkarskiej";
+                    info.Text = "Błędne dane, popraw.";
                 }
                 finally
                 {

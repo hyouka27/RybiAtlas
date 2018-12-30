@@ -10,7 +10,7 @@ using Android.Content;
 
 namespace START
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme",MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
         private EditText etusername;
@@ -18,8 +18,6 @@ namespace START
         private Button btninsert;
         private TextView tvTips;
         private Button btnrejestracja;
-        private Button btnmenu;
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -47,11 +45,11 @@ namespace START
                 numerkart = Int32.Parse(etusername.Text);
             }
             string pass2 = etpass.Text;
+            LinkBaza.numer = numerkart;
             InsertInfo(numerkart, pass2);
-            Login nowy = new Login();
-            nowy.Danelogin(numerkart, pass2);
-
         }
+
+
         void InsertInfo(int numerkart, string pass2)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
@@ -75,7 +73,8 @@ namespace START
                     if (test == 1)
                     {
                         //tvTips.Text = Output;
-                        SetContentView(Resource.Layout.activity_konto);
+                            var konto = new Intent(this, typeof(KontoActivity));
+                            StartActivity(konto);
                     }
                     else
                     {
