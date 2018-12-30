@@ -63,7 +63,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AllokregiActivity.cs" />
-    <Compile Include="DodajrybeActivity.cs" />
     <Compile Include="KontoActivity.cs" />
     <Compile Include="LinkBaza.cs" />
     <Compile Include="ListalowiskActivity.cs" />
@@ -170,11 +169,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\activity_wybranaryba.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\activity_dodajrybe.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

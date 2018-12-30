@@ -10,7 +10,7 @@ using Android.Content;
 
 namespace START
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme",MainLauncher = true)]
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
     public class MainActivity : AppCompatActivity
     {
         private EditText etusername;
