@@ -78,8 +78,8 @@ namespace START
                     command.Parameters.Add(new SqlParameter("mail", mail));
                     command.ExecuteNonQuery();
                     conn.Close();
-                    var konto = new Intent(this, typeof(KontoActivity));
-                    StartActivity(konto);
+                    var menu = new Intent(this, typeof(MenuActivity));
+                    StartActivity(menu);
                 }
                 catch
                 {

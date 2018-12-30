@@ -72,8 +72,8 @@ namespace START
                     test = Int32.Parse(Output);
                     if (test == 1)
                     {
-                            var konto = new Intent(this, typeof(KontoActivity));
-                            StartActivity(konto);
+                            var menu = new Intent(this, typeof(MenuActivity));
+                            StartActivity(menu);
                     }
                     else
                     {

@@ -23,14 +23,20 @@ namespace START
         private Button btnryby;
         private Button btnulub;
         private Button btnwyloguj;
-
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_menu);
+            btnkonto = FindViewById<Button>(Resource.Id.btnkonto);
+            btnkonto.Click += delegate {
+                var konto = new Intent(this, typeof(KontoActivity));
+                StartActivity(konto);
+            };
         }
 
-        
+        private void btnkonto_Click(object sender, System.EventArgs e)
+        {
+            SetContentView(Resource.Layout.activity_konto);
+        }
     }
 }
