@@ -3,11 +3,27 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-	<Button
-		android:text="menu"
+	<TextView
+		android:text="NAZWA OKRĘGU:"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:id="@+id/btnmenu" />
+		android:id="@+id/textView1" />
+	<TextView
+		
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/getnazwaokregu" />
+	<TextView
+		android:text="WYSOKOŚĆ SKŁADKI:"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textView3" />
+	<TextView
+		
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/getskladka" />
+	
 	<Button
 		android:text="łowiska"
 		android:layout_width="match_parent"

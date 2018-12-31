@@ -16,7 +16,7 @@ namespace START
     [Activity(Label = "@string/app_nameregul", Theme = "@style/AppTheme")]
     public class RegulActivity :AppCompatActivity
     {
-        private Button btnmenu;
+       
 
         protected override void OnCreate(Bundle savedInstanceState)
         {

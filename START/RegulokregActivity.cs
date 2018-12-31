@@ -16,7 +16,7 @@ namespace START
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
     public class RegulokregActivity : AppCompatActivity
     {
-        private Button btnmenu;
+       
 
 
         protected override void OnCreate(Bundle savedInstanceState)

@@ -3,11 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-	<Button
-		android:text="menu"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/btnmenu" />
+	
 	<TextView
 		android:text="TWOJE KONTO"
 		android:layout_width="match_parent"
@@ -54,11 +50,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/getmail" />
 	
-	<Button
-		android:text="Edytuj dane"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/button1" />
+
 
 
 </LinearLayout>

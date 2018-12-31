@@ -20,7 +20,6 @@ namespace START
         private TextView nazwisko;
         private TextView tel;
         private TextView mail;
-        private Button btnmenu;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);

@@ -17,7 +17,7 @@ namespace START
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
     public class UlubActivity : AppCompatActivity
     {
-        private Button btnmenu;
+       
         private RecyclerView lista1;
 
         protected override void OnCreate(Bundle savedInstanceState)

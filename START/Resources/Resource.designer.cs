@@ -2336,8 +2336,8 @@ namespace START
 			// aapt resource value: 0x7f080035
 			public const int META = 2131230773;
 			
-			// aapt resource value: 0x7f0800a8
-			public const int Pass = 2131230888;
+			// aapt resource value: 0x7f0800a6
+			public const int Pass = 2131230886;
 			
 			// aapt resource value: 0x7f080036
 			public const int SHIFT = 2131230774;
@@ -2432,44 +2432,38 @@ namespace START
 			// aapt resource value: 0x7f08003d
 			public const int bottom = 2131230781;
 			
-			// aapt resource value: 0x7f0800a1
-			public const int btnallokregi = 2131230881;
-			
-			// aapt resource value: 0x7f08009b
-			public const int btninsert = 2131230875;
-			
 			// aapt resource value: 0x7f08009f
-			public const int btnkonto = 2131230879;
+			public const int btnallokregi = 2131230879;
+			
+			// aapt resource value: 0x7f080099
+			public const int btninsert = 2131230873;
+			
+			// aapt resource value: 0x7f08009d
+			public const int btnkonto = 2131230877;
 			
 			// aapt resource value: 0x7f0800b4
 			public const int btnlowiska = 2131230900;
 			
-			// aapt resource value: 0x7f08008b
-			public const int btnmenu = 2131230859;
+			// aapt resource value: 0x7f08009e
+			public const int btnokregi = 2131230878;
 			
 			// aapt resource value: 0x7f0800a0
-			public const int btnokregi = 2131230880;
-			
-			// aapt resource value: 0x7f0800a2
-			public const int btnregul = 2131230882;
+			public const int btnregul = 2131230880;
 			
 			// aapt resource value: 0x7f0800b5
 			public const int btnregulokreg = 2131230901;
 			
-			// aapt resource value: 0x7f08009e
-			public const int btnrejestracja = 2131230878;
+			// aapt resource value: 0x7f08009c
+			public const int btnrejestracja = 2131230876;
 			
-			// aapt resource value: 0x7f0800af
-			public const int btnrejinsert = 2131230895;
+			// aapt resource value: 0x7f0800ad
+			public const int btnrejinsert = 2131230893;
 			
-			// aapt resource value: 0x7f0800a3
-			public const int btnryby = 2131230883;
+			// aapt resource value: 0x7f0800a1
+			public const int btnryby = 2131230881;
 			
-			// aapt resource value: 0x7f0800a4
-			public const int btnulub = 2131230884;
-			
-			// aapt resource value: 0x7f080096
-			public const int button1 = 2131230870;
+			// aapt resource value: 0x7f0800a2
+			public const int btnulub = 2131230882;
 			
 			// aapt resource value: 0x7f080063
 			public const int buttonPanel = 2131230819;
@@ -2555,11 +2549,11 @@ namespace START
 			// aapt resource value: 0x7f080040
 			public const int enterAlwaysCollapsed = 2131230784;
 			
-			// aapt resource value: 0x7f08009a
-			public const int etPass = 2131230874;
+			// aapt resource value: 0x7f080098
+			public const int etPass = 2131230872;
 			
-			// aapt resource value: 0x7f080099
-			public const int etusername = 2131230873;
+			// aapt resource value: 0x7f080097
+			public const int etusername = 2131230871;
 			
 			// aapt resource value: 0x7f080041
 			public const int exitUntilCollapsed = 2131230785;
@@ -2585,29 +2579,35 @@ namespace START
 			// aapt resource value: 0x7f080058
 			public const int forever = 2131230808;
 			
-			// aapt resource value: 0x7f0800b1
-			public const int getgranice = 2131230897;
+			// aapt resource value: 0x7f0800af
+			public const int getgranice = 2131230895;
 			
-			// aapt resource value: 0x7f08008f
-			public const int getimie = 2131230863;
+			// aapt resource value: 0x7f08008e
+			public const int getimie = 2131230862;
 			
-			// aapt resource value: 0x7f080095
-			public const int getmail = 2131230869;
+			// aapt resource value: 0x7f080094
+			public const int getmail = 2131230868;
 			
-			// aapt resource value: 0x7f0800b0
-			public const int getnazwalowsika = 2131230896;
-			
-			// aapt resource value: 0x7f080091
-			public const int getnazwisko = 2131230865;
-			
-			// aapt resource value: 0x7f0800b3
-			public const int getokreg = 2131230899;
-			
-			// aapt resource value: 0x7f080093
-			public const int gettel = 2131230867;
+			// aapt resource value: 0x7f0800ae
+			public const int getnazwalowsika = 2131230894;
 			
 			// aapt resource value: 0x7f0800b2
-			public const int getzbiorniki = 2131230898;
+			public const int getnazwaokregu = 2131230898;
+			
+			// aapt resource value: 0x7f080090
+			public const int getnazwisko = 2131230864;
+			
+			// aapt resource value: 0x7f0800b1
+			public const int getokreg = 2131230897;
+			
+			// aapt resource value: 0x7f0800b3
+			public const int getskladka = 2131230899;
+			
+			// aapt resource value: 0x7f080092
+			public const int gettel = 2131230866;
+			
+			// aapt resource value: 0x7f0800b0
+			public const int getzbiorniki = 2131230896;
 			
 			// aapt resource value: 0x7f08000a
 			public const int ghost_view = 2131230730;
@@ -2630,20 +2630,20 @@ namespace START
 			// aapt resource value: 0x7f08005f
 			public const int image = 2131230815;
 			
-			// aapt resource value: 0x7f0800ae
-			public const int info = 2131230894;
+			// aapt resource value: 0x7f0800ac
+			public const int info = 2131230892;
 			
-			// aapt resource value: 0x7f0800aa
-			public const int insimie = 2131230890;
-			
-			// aapt resource value: 0x7f0800ad
-			public const int insmail = 2131230893;
+			// aapt resource value: 0x7f0800a8
+			public const int insimie = 2131230888;
 			
 			// aapt resource value: 0x7f0800ab
-			public const int insnazwisko = 2131230891;
+			public const int insmail = 2131230891;
 			
-			// aapt resource value: 0x7f0800ac
-			public const int instel = 2131230892;
+			// aapt resource value: 0x7f0800a9
+			public const int insnazwisko = 2131230889;
+			
+			// aapt resource value: 0x7f0800aa
+			public const int instel = 2131230890;
 			
 			// aapt resource value: 0x7f080059
 			public const int italic = 2131230809;
@@ -2669,17 +2669,17 @@ namespace START
 			// aapt resource value: 0x7f080061
 			public const int list_item = 2131230817;
 			
-			// aapt resource value: 0x7f0800a5
-			public const int lista = 2131230885;
+			// aapt resource value: 0x7f0800a3
+			public const int lista = 2131230883;
 			
-			// aapt resource value: 0x7f080097
-			public const int listaV = 2131230871;
+			// aapt resource value: 0x7f080095
+			public const int listaV = 2131230869;
 			
-			// aapt resource value: 0x7f08008c
-			public const int listall = 2131230860;
+			// aapt resource value: 0x7f08008b
+			public const int listall = 2131230859;
 			
-			// aapt resource value: 0x7f080098
-			public const int logowanie = 2131230872;
+			// aapt resource value: 0x7f080096
+			public const int logowanie = 2131230870;
 			
 			// aapt resource value: 0x7f0800d8
 			public const int masked = 2131230936;
@@ -2720,8 +2720,8 @@ namespace START
 			// aapt resource value: 0x7f0800cc
 			public const int notification_main_column_container = 2131230924;
 			
-			// aapt resource value: 0x7f0800a7
-			public const int nrkarty = 2131230887;
+			// aapt resource value: 0x7f0800a5
+			public const int nrkarty = 2131230885;
 			
 			// aapt resource value: 0x7f08004c
 			public const int parallax = 2131230796;
@@ -2744,8 +2744,8 @@ namespace START
 			// aapt resource value: 0x7f080075
 			public const int radio = 2131230837;
 			
-			// aapt resource value: 0x7f0800a6
-			public const int rejestracja1 = 2131230886;
+			// aapt resource value: 0x7f0800a4
+			public const int rejestracja1 = 2131230884;
 			
 			// aapt resource value: 0x7f08004a
 			public const int right = 2131230794;
@@ -2885,26 +2885,26 @@ namespace START
 			// aapt resource value: 0x7f080069
 			public const int textSpacerNoTitle = 2131230825;
 			
+			// aapt resource value: 0x7f08008c
+			public const int textView1 = 2131230860;
+			
 			// aapt resource value: 0x7f08008d
-			public const int textView1 = 2131230861;
+			public const int textView2 = 2131230861;
 			
-			// aapt resource value: 0x7f08008e
-			public const int textView2 = 2131230862;
+			// aapt resource value: 0x7f08008f
+			public const int textView3 = 2131230863;
 			
-			// aapt resource value: 0x7f080090
-			public const int textView3 = 2131230864;
+			// aapt resource value: 0x7f080091
+			public const int textView5 = 2131230865;
 			
-			// aapt resource value: 0x7f080092
-			public const int textView5 = 2131230866;
+			// aapt resource value: 0x7f080093
+			public const int textView6 = 2131230867;
 			
-			// aapt resource value: 0x7f080094
-			public const int textView6 = 2131230868;
+			// aapt resource value: 0x7f0800a7
+			public const int textView7 = 2131230887;
 			
-			// aapt resource value: 0x7f0800a9
-			public const int textView7 = 2131230889;
-			
-			// aapt resource value: 0x7f08009d
-			public const int textViewrejestracja = 2131230877;
+			// aapt resource value: 0x7f08009b
+			public const int textViewrejestracja = 2131230875;
 			
 			// aapt resource value: 0x7f0800c3
 			public const int text_input_password_toggle = 2131230915;
@@ -2951,8 +2951,8 @@ namespace START
 			// aapt resource value: 0x7f080013
 			public const int transition_transform = 2131230739;
 			
-			// aapt resource value: 0x7f08009c
-			public const int tvTips = 2131230876;
+			// aapt resource value: 0x7f08009a
+			public const int tvTips = 2131230874;
 			
 			// aapt resource value: 0x7f08002d
 			public const int uniform = 2131230765;

@@ -17,7 +17,7 @@ namespace START
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
     public class WybranyokregActivity : AppCompatActivity
     {
-        private Button btnmenu;
+     
         private Button btnlowiska;
         private Button btnregulokreg;
 
