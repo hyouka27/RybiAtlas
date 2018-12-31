@@ -53,7 +53,7 @@ namespace START
                     SqlDataReader czytaj = command.ExecuteReader();
                     while (czytaj.Read())
                     {
-                        nazwa.Text = czytaj.GetString(0);
+                       string test = czytaj.GetString(0);
                     }
                 }
                 catch

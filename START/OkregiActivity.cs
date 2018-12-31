@@ -25,7 +25,7 @@ namespace START
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_okregi);
-            lista = FindViewById<ListView>(START.Resource.Id.listall);
+            lista = FindViewById<ListView>(START.Resource.Id.lista);
             okrega = new List<string>();
             Okrega(LinkBaza.numer);
             ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, okrega);

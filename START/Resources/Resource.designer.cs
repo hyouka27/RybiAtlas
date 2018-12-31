@@ -2670,7 +2670,7 @@ namespace START
 			public const int list_item = 2131230817;
 			
 			// aapt resource value: 0x7f0800a5
-			public const int lista1 = 2131230885;
+			public const int lista = 2131230885;
 			
 			// aapt resource value: 0x7f080097
 			public const int listaV = 2131230871;
