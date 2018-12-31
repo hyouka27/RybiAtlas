@@ -51,8 +51,9 @@ namespace START
                 conn.Open();
                 try
                 {
-                    string commandText = "SELECT nazwaokregu FROM okregi INNER JOIN oplacone ON okregi.idokregu=oplacone.idokregu WHERE oplacone LIKE 'tak'";
+                    string commandText = "SELECT nazwaokregu FROM okregi INNER JOIN oplacone ON okregi.idokregu=oplacone.idokregu WHERE oplacone LIKE 'tak' AND numerkart LIKE @user";
                     SqlCommand command = new SqlCommand(commandText, conn);
+                    command.Parameters.Add(new SqlParameter("user", numerkart));
                     command.ExecuteNonQuery();
                     SqlDataReader czytaj = command.ExecuteReader();
                     foreach (var item in czytaj)
