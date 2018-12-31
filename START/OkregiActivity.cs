@@ -18,76 +18,60 @@ namespace START
     [Activity(Label = "@string/okregi", Theme = "@style/AppTheme")]
     public class OkregiActivity : AppCompatActivity
     {
-        private Button btnmenu;
-        private RecyclerView lista1;
+        private List<string> okrega;
+        private ListView lista;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_okregi);
+            lista = FindViewById<ListView>(START.Resource.Id.listall);
+            okrega = new List<string>();
+            Okrega(LinkBaza.numer);
+            ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, okrega);
+            lista.Adapter = adapter;
+            lista.ItemClick += ListaVClick;
 
 
-            btnmenu.Click += delegate {
-                var menu = new Intent(this, typeof(MenuActivity));
-                StartActivity(menu);
-            };
         }
-
-        private void Btnmenu_Click(object sender, System.EventArgs e)
+        private void ListaVClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-
-            SetContentView(Resource.Layout.activity_menu);
+            var okreg = new Intent(this, typeof(WybranyokregActivity));
+            StartActivity(okreg);
+            string okregall1 = okrega[e.Position];
+            LinkBaza.lowsikobaza = okregall1;
+            Toast.MakeText(this, okregall1, ToastLength.Long).Show();
         }
 
-        void Wyswietlokregi(int numerkart, string pass2)
+
+
+        void Okrega(int numerkart)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
             {
                 conn.Open();
-
                 try
                 {
-                    string Output = "";
-                    string commandText = "select numerkarty as cnt from userI WHERE numerkarty=@user AND haslo LIKE @pass";
+                    string commandText = "SELECT nazwaokregu FROM okregi WHERE skladka IS NOT NULL";
                     SqlCommand command = new SqlCommand(commandText, conn);
-                    command.Parameters.Add(new SqlParameter("user", numerkart));
-                    command.Parameters.Add(new SqlParameter("pass", pass2));
                     command.ExecuteNonQuery();
                     SqlDataReader czytaj = command.ExecuteReader();
-                    while (czytaj.Read())
+                    foreach (var item in czytaj)
                     {
-                        Output = Output + czytaj.GetValue(0);
-                    }
-                    int test;
-                    test = Int32.Parse(Output);
-                    if (test == numerkart)
-                    {
-
-
-                    }
-                    else
-                    {
-                        //tvTips.Text = "Błędny login lub hasło";
-
+                        int i = 0;
+                        okrega.Add(czytaj.GetString(i));
+                        i++;
                     }
                 }
                 catch
                 {
-                    // tvTips.Text = "Nie możesz się zalogować, popraw dane.";
-                    //using (SqlDataReader reader = cmd.ExecuteReader())
-                    //{
-                    //    //while (reader.Read())
-                    //    //{
-                    //    //    Console.WriteLine("ID: [{0}], Name: [{1}]", reader.GetValue(0), reader.GetValue(1));
-                    //    //}
-                    //}
                 }
                 finally
                 {
                     conn.Close();
                 }
             }
-
         }
+
     }
 }

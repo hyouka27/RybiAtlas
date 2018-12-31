@@ -2444,8 +2444,8 @@ namespace START
 			// aapt resource value: 0x7f0800b4
 			public const int btnlowiska = 2131230900;
 			
-			// aapt resource value: 0x7f08008d
-			public const int btnmenu = 2131230861;
+			// aapt resource value: 0x7f08008b
+			public const int btnmenu = 2131230859;
 			
 			// aapt resource value: 0x7f0800a0
 			public const int btnokregi = 2131230880;
@@ -2676,7 +2676,7 @@ namespace START
 			public const int listaV = 2131230871;
 			
 			// aapt resource value: 0x7f08008c
-			public const int listaall1 = 2131230860;
+			public const int listall = 2131230860;
 			
 			// aapt resource value: 0x7f080098
 			public const int logowanie = 2131230872;
@@ -2885,8 +2885,8 @@ namespace START
 			// aapt resource value: 0x7f080069
 			public const int textSpacerNoTitle = 2131230825;
 			
-			// aapt resource value: 0x7f08008b
-			public const int textView1 = 2131230859;
+			// aapt resource value: 0x7f08008d
+			public const int textView1 = 2131230861;
 			
 			// aapt resource value: 0x7f08008e
 			public const int textView2 = 2131230862;

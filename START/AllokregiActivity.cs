@@ -19,33 +19,49 @@ namespace START
     public class AllokregiActivity :AppCompatActivity
     {
 
-        
-        private RecyclerView listaall1;
-      
+
+        private List<string> okregall;
+        private ListView listall;
+
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_allokregi);
-            listaall1 = FindViewById<RecyclerView>(Resource.Id.listaall1);
-            Oplaconeo(LinkBaza.numer);
+            listall = FindViewById<ListView>(START.Resource.Id.listall);
+            okregall = new List<string>();
+            Okregall(LinkBaza.numer);
+            ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, okregall);
+            listall.Adapter = adapter;
+            listall.ItemClick += ListaVClick;
   
         }
-        void Oplaconeo(int numerkart)
+
+        private void ListaVClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            var okreg = new Intent(this, typeof(WybranyokregActivity));
+            StartActivity(okreg);
+            string okregall1 = okregall[e.Position];
+            LinkBaza.lowsikobaza = okregall1;
+            Toast.MakeText(this, okregall1, ToastLength.Long).Show();
+        }
+
+        void Okregall(int numerkart)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
             {
                 conn.Open();
                 try
                 {
-                    string commandText = "select nazwisko from userI WHERE numerkarty=@user";
+                    string commandText = "SELECT nazwaokregu FROM okregi";
                     SqlCommand command = new SqlCommand(commandText, conn);
-                    command.Parameters.Add(new SqlParameter("user", numerkart));
                     command.ExecuteNonQuery();
                     SqlDataReader czytaj = command.ExecuteReader();
-                    while (czytaj.Read())
+                    foreach (var item in czytaj)
                     {
-                        //listaall1.RecyclerEvent = czytaj.GetString(0);
+                        int i = 0;
+                        okregall.Add(czytaj.GetString(i));
+                        i++;
                     }
                 }
                 catch

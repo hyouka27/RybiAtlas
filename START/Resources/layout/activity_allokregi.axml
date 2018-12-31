@@ -3,18 +3,13 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-	<TextView
-        android:text="Lista opłaconych okręgów"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+	<Button
+        android:text="MENU"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView1" />
-	<android.support.v7.widget.RecyclerView
-		android:minWidth="50px"
-		android:minHeight="50px"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/listaall1" />
-
+        android:id="@+id/btnmenu" />
+<ListView 
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:id="@+id/listall" />	
 </LinearLayout>

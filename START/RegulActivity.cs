@@ -24,10 +24,7 @@ namespace START
             SetContentView(Resource.Layout.activity_regul);
 
 
-            btnmenu.Click += delegate {
-                var menu = new Intent(this, typeof(MenuActivity));
-                StartActivity(menu);
-            };
+           
         }
 
     }

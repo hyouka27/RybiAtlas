@@ -25,11 +25,7 @@ namespace START
             SetContentView(Resource.Layout.activity_ryby);
 
 
-            btnmenu.Click += delegate
-            {
-                var menu = new Intent(this, typeof(MenuActivity));
-                StartActivity(menu);
-            };
+         
         }
     }
 }
