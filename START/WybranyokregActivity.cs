@@ -20,6 +20,9 @@ namespace START
      
         private Button btnlowiska;
         private Button btnregulokreg;
+        private TextView getnazwaokregu;
+        private TextView getskladka;
+
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -35,25 +38,27 @@ namespace START
                 var rokreg = new Intent(this, typeof(RegulokregActivity));
                 StartActivity(rokreg);
             };
-            Podajnazwe(LinkBaza.lowsikobaza);
+            getnazwaokregu = FindViewById<TextView>(Resource.Id.getnazwaokregu);
+            getskladka = FindViewById<TextView>(Resource.Id.getskladka);
+            Podajnazweokregu(LinkBaza.okregbaza);
+            Podajskladke(LinkBaza.okregbaza);
 
         }
-
-        void Podajnazwe(string numerkart)
+        void Podajnazweokregu(string numerkart)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
             {
                 conn.Open();
                 try
                 {
-                    string commandText = "select nazwalowiska from lowiska WHERE nazwalowiska LIKE @user";
+                    string commandText = "SELECT nazwaokregu FROM okregi WHERE nazwaokregu LIKE @user";
                     SqlCommand command = new SqlCommand(commandText, conn);
                     command.Parameters.Add(new SqlParameter("user", numerkart));
                     command.ExecuteNonQuery();
                     SqlDataReader czytaj = command.ExecuteReader();
                     while (czytaj.Read())
                     {
-                       string test = czytaj.GetString(0);
+                        getnazwaokregu.Text = czytaj.GetString(0);
                     }
                 }
                 catch
@@ -65,8 +70,36 @@ namespace START
                 }
             }
         }
+        void Podajskladke(string numerkart)
+        {
+            using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
+            {
+                conn.Open();
+                try
+                {
+                    string commandText = "SELECT skladka FROM okregi WHERE nazwaokregu LIKE @users";
+                    SqlCommand command = new SqlCommand(commandText, conn);
+                    command.Parameters.Add(new SqlParameter("users", numerkart));
+                    command.ExecuteNonQuery();
+                    SqlDataReader czytaj = command.ExecuteReader();
+                    while (czytaj.Read())
+                    {
+                        getskladka.Text = czytaj.GetInt32(0).ToString();
+                    }
+                }
+                catch
+                {
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
+
         private void btnlowiska_Click(object sender, System.EventArgs e)
         {
+
             SetContentView(Resource.Layout.activity_listalowisk);
         }
         private void btnregulokreg_Click(object sender, System.EventArgs e)

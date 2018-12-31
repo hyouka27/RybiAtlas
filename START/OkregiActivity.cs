@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -39,7 +38,7 @@ namespace START
             var okreg = new Intent(this, typeof(WybranyokregActivity));
             StartActivity(okreg);
             string okregall1 = okrega[e.Position];
-            LinkBaza.lowsikobaza = okregall1;
+            LinkBaza.okregbaza = okregall1;
             Toast.MakeText(this, okregall1, ToastLength.Long).Show();
         }
 
@@ -52,7 +51,7 @@ namespace START
                 conn.Open();
                 try
                 {
-                    string commandText = "SELECT nazwaokregu FROM okregi WHERE skladka IS NOT NULL";
+                    string commandText = "SELECT nazwaokregu FROM okregi INNER JOIN oplacone ON okregi.idokregu=oplacone.idokregu WHERE oplacone LIKE 'tak'";
                     SqlCommand command = new SqlCommand(commandText, conn);
                     command.ExecuteNonQuery();
                     SqlDataReader czytaj = command.ExecuteReader();

@@ -9,7 +9,6 @@
 		android:layout_height="wrap_content"
 		android:id="@+id/textView1" />
 	<TextView
-		
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/getnazwaokregu" />
@@ -19,11 +18,9 @@
 		android:layout_height="wrap_content"
 		android:id="@+id/textView3" />
 	<TextView
-		
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/getskladka" />
-	
 	<Button
 		android:text="łowiska"
 		android:layout_width="match_parent"

@@ -26,21 +26,22 @@ namespace START
             SetContentView(Resource.Layout.activity_listalowisk);
             listaV = FindViewById<ListView>(START.Resource.Id.listaV);
             lowiska = new List<string>();
-            Lowsika(LinkBaza.numer);
+            Lowsika(LinkBaza.okregbaza);
             ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, lowiska);
             listaV.Adapter = adapter;
             listaV.ItemClick += ListaVClick;
 
 
-            void Lowsika(int numerkart)
+            void Lowsika(string numerkart)
             {
                 using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
                 {
                     conn.Open();
                     try
                     {
-                        string commandText = "SELECT nazwalowiska FROM lowiska";
+                        string commandText = "SELECT nazwalowiska FROM okregi INNER JOIN lowiska ON okregi.idokregu=lowiska.idokregu WHERE okregi.nazwaokregu LIKE @test";
                         SqlCommand command = new SqlCommand(commandText, conn);
+                        command.Parameters.Add(new SqlParameter("test", numerkart));
                         command.ExecuteNonQuery();
                         SqlDataReader czytaj = command.ExecuteReader();
                         foreach (var item in czytaj)

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -42,7 +41,7 @@ namespace START
             var okreg = new Intent(this, typeof(WybranyokregActivity));
             StartActivity(okreg);
             string okregall1 = okregall[e.Position];
-            LinkBaza.lowsikobaza = okregall1;
+            LinkBaza.okregbaza = okregall1;
             Toast.MakeText(this, okregall1, ToastLength.Long).Show();
         }
 
