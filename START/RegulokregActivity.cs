@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -17,15 +16,25 @@ namespace START
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
     public class RegulokregActivity : AppCompatActivity
     {
+        /// <summary>
+        /// Zmienne.
+        /// </summary>
         private TextView reg;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            /// <summary>
+            /// Zawiera opisy elementów przypisane do gui jak i metody.
+            /// </summary>
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_regulokreg);
             reg = FindViewById<TextView>(Resource.Id.reg);
             Podajreg(LinkBaza.okregbaza);
         }
+
+        /// <summary>
+        /// Metoda wyświetla regulamin danego okręgu. 
+        /// </summary>
         void Podajreg(string numerkart)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))

@@ -17,11 +17,17 @@ namespace START
     [Activity(Label = "@string/okregi", Theme = "@style/AppTheme")]
     public class OkregiActivity : AppCompatActivity
     {
+        /// <summary>
+        /// Zmienne
+        /// </summary>
         private List<string> okrega;
         private ListView lista;
-
+    
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            /// <summary>
+            /// Zawiera opisy elementów przypisane do gui jak i metody.
+            /// </summary>
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_okregi);
             lista = FindViewById<ListView>(START.Resource.Id.lista);
@@ -30,9 +36,11 @@ namespace START
             ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, okrega);
             lista.Adapter = adapter;
             lista.ItemClick += ListaVClick;
-
-
         }
+
+        /// <summary>
+        /// Akcja po kliknięciu na wybrany okręg plus zapisanie jego nazwy do zmiennej pomocniczej okregbaza z klasy LinkBaza.
+        /// </summary>
         private void ListaVClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             var okreg = new Intent(this, typeof(WybranyokregActivity));
@@ -42,8 +50,9 @@ namespace START
             Toast.MakeText(this, okregall1, ToastLength.Long).Show();
         }
 
-
-
+        /// <summary>
+        /// Metoda sprawdza czy użytkownik zapłacił za dany okręg, jeśli nie okręg nie zostanie wyświetlony, pokazuje opłacone okręgi.
+        /// </summary>
         void Okrega(int numerkart)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
@@ -65,6 +74,7 @@ namespace START
                 }
                 catch
                 {
+                Toast.MakeText(this, "Brak wykupionych okręgów", ToastLength.Long).Show();
                 }
                 finally
                 {

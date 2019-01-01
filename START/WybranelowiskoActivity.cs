@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -17,14 +16,19 @@ namespace START
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
     public class WybranelowiskoActivity : AppCompatActivity
     {
+        /// <summary>
+        /// Zmienne.
+        /// </summary>
         private TextView nazwa;
         private TextView granica;
         private TextView zbiorniki;
         private TextView okreg;
 
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            /// <summary>
+            /// Zawiera opisy elementów przypisane do gui jak i metody.
+            /// </summary>
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_wybranelowisko);
             nazwa = FindViewById<TextView>(Resource.Id.getnazwalowsika);
@@ -35,8 +39,11 @@ namespace START
             Podajgranice(LinkBaza.lowsikobaza);
             Podajzbiorniki(LinkBaza.lowsikobaza);
             Podajokreg(LinkBaza.lowsikobaza);
-
         }
+
+        /// <summary>
+        /// Metoda pobiera z bazy nazwę łowiska.
+        /// </summary>
         void Podajnazwe(string numerkart)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
@@ -63,6 +70,10 @@ namespace START
                 }
             }
         }
+
+        /// <summary>
+        /// Metoda pobiera z bazy granice łowiska.
+        /// </summary>
         void Podajgranice(string numerkart)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
@@ -89,6 +100,10 @@ namespace START
                 }
             }
         }
+
+        /// <summary>
+        /// Metoda pobiera z bazy zbiorniki łowiska.
+        /// </summary>
         void Podajzbiorniki(string numerkart)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
@@ -116,6 +131,10 @@ namespace START
                 }
             }
         }
+
+        /// <summary>
+        /// Metoda pobiera z bazy nazwę okręgu w którym jest łowsiko.
+        /// </summary>
         void Podajokreg(string numerkart)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))

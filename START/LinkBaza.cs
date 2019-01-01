@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -13,6 +12,10 @@ using Android.Widget;
 
 namespace START
 {
+    /// <summary>
+    /// Klasa statyczna która zajmuje się przechowywaniem zmiennych które są użytkowane w całej aplikacji,jest to np, sesja użytkownika, czy też zapis obecnego okręgu czy łowiska, tak by aktywność wiedziała co ma iść w zapytanie do bazy by coś zwrócić. 
+    /// Mamy tu także connString czyli nasze dane do połączenia do bazy które wykorzystują wszystkie metody operujące na bazie.
+    /// </summary>
     public static class LinkBaza
     {
     public static int numer;

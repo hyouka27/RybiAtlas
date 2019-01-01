@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -17,11 +16,17 @@ namespace START
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
     public class ListalowiskActivity : AppCompatActivity
     {
+        /// <summary>
+        /// Zmienne. 
+        /// </summary>
         private List<string> lowiska;
         private ListView listaV;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            /// <summary>
+            /// Zawiera opisy elementów przypisane do gui jak i metody.
+            /// </summary>
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_listalowisk);
             listaV = FindViewById<ListView>(START.Resource.Id.listaV);
@@ -31,7 +36,9 @@ namespace START
             listaV.Adapter = adapter;
             listaV.ItemClick += ListaVClick;
 
-
+            /// <summary>
+            /// Odczytuje z bazy liste łowisk na bazie okręgu odczytanego z dostępnej w całej aplikacji zmiennej okregbaza z klasy LinkBaza
+            /// </summary>
             void Lowsika(string numerkart)
             {
                 using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
@@ -61,7 +68,9 @@ namespace START
                 }
             }
         }
-
+        /// <summary>
+        /// Pamięta łowisko i zapisuje jego nazwę do zmiennej lowsikobaza z klasy LinkBaza by użyć tego w dalszej części aplikacji
+        /// </summary>
         private void ListaVClick(object sender, AdapterView.ItemClickEventArgs e)
         {
                 var lowsiko = new Intent(this, typeof(WybranelowiskoActivity));

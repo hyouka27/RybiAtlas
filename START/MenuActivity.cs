@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -16,6 +15,9 @@ namespace START
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
     public class MenuActivity :AppCompatActivity
     {
+        /// <summary>
+        /// Zmienne
+        /// </summary>
         private Button btnkonto;
         private Button btnokregi;
         private Button btnallokregi;
@@ -25,47 +27,45 @@ namespace START
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            /// <summary>
+            /// Zawiera opisy elementów przypisane do gui jak i metody.
+            /// </summary>
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_menu);
-            //przypisanie btnkonto ze zmiennej u gory linia19
             btnkonto = FindViewById<Button>(Resource.Id.btnkonto);
-            //od 33 do 36 przelaczanie ekranu plus 39 do 42
             btnkonto.Click += delegate {
                 var konto = new Intent(this, typeof(KontoActivity));
                 StartActivity(konto);
             };
             btnokregi = FindViewById<Button>(Resource.Id.btnokregi);
-            //od 33 do 36 przelaczanie ekranu plus 39 do 42
             btnokregi.Click += delegate {
                 var okregi = new Intent(this, typeof(OkregiActivity));
                 StartActivity(okregi);
             };
             btnallokregi = FindViewById<Button>(Resource.Id.btnallokregi);
-            //od 33 do 36 przelaczanie ekranu plus 39 do 42
             btnallokregi.Click += delegate {
                 var allokregi = new Intent(this, typeof(AllokregiActivity));
                 StartActivity(allokregi);
             };
             btnregul = FindViewById<Button>(Resource.Id.btnregul);
-            //od 33 do 36 przelaczanie ekranu plus 39 do 42
             btnregul.Click += delegate {
                 var regul = new Intent(this, typeof(RegulActivity));
                 StartActivity(regul);
             };
             btnryby = FindViewById<Button>(Resource.Id.btnryby);
-            //od 33 do 36 przelaczanie ekranu plus 39 do 42
             btnryby.Click += delegate {
                 var ryby = new Intent(this, typeof(RybyActivity));
                 StartActivity(ryby);
             };
             btnulub = FindViewById<Button>(Resource.Id.btnulub);
-            //od 33 do 36 przelaczanie ekranu plus 39 do 42
             btnulub.Click += delegate {
                 var ulub = new Intent(this, typeof(UlubActivity));
                 StartActivity(ulub);
             };
         }
-        //metoda poza oncreate
+        /// <summary>
+        /// Metody odpowiedzialne za działanie przycisków w menu, przekierowują do wybranych aktywnośći.
+        /// </summary>
         private void btnkonto_Click(object sender, System.EventArgs e)
         {
             SetContentView(Resource.Layout.activity_konto);

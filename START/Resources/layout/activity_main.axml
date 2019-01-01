@@ -35,21 +35,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btninsert" />
-    <TextView
-        android:text="Wskazówki"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvTips" />
-	<TextView
-        android:text="Jeśli nie masz zarejestrowanej karty kliknij w poniższy guzik, aby ją zarejestrować."
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textViewrejestracja" />
 	 <Button
         android:text="Zarejestruj kartę"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btnrejestracja" />
+	  <TextView
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvTips" />
 </LinearLayout>

@@ -14,6 +14,9 @@ namespace START
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
     public class RejestracjaActivity : AppCompatActivity
     {
+        /// <summary>
+        /// Zmienne.
+        /// </summary>
         private EditText nrkarty;
         private EditText pass;
         private EditText insimie;
@@ -25,6 +28,9 @@ namespace START
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            /// <summary>
+            /// Zawiera opisy elementów przypisane do gui jak i metody.
+            /// </summary>
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_rejestracja);
             nrkarty = FindViewById<EditText>(Resource.Id.nrkarty);
@@ -36,10 +42,11 @@ namespace START
             btnrejinsert = FindViewById<Button>(Resource.Id.btnrejinsert);
             info = FindViewById<TextView>(Resource.Id.info);
             btnrejinsert.Click += Btnrejinsert_Click;
-
         }
 
-
+        /// <summary>
+        /// Sprawdza warunkowo czy podane dane są poprawne plus dokonuje konwersji z stringa na inta tam gdzie jest to potrzebne.
+        /// </summary>
         private void Btnrejinsert_Click(object sender, System.EventArgs e)
         {
             string imie = insimie.Text;
@@ -61,13 +68,17 @@ namespace START
             LinkBaza.numer = numerkart;
             InsertInfo2(numerkart,pass2,imie,nazwisko,tel,mail);
         }
-         void InsertInfo2(int numerkart, string pass2,string imie,string nazwisko,int tel,string mail)
+
+        /// <summary>
+        /// Metoda dodaje nowego użytkownika do bazy, oczywiście jeśli dane są poprawne i jest dostęp do sieci. 
+        /// </summary>
+        void InsertInfo2(int numerkart, string pass2,string imie,string nazwisko,int tel,string mail)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
             {
-                conn.Open();
                 try
                 {
+                    conn.Open();
                     string commandText = "insert into userI(numerkarty,haslo,imie,nazwisko,telefon,email) values(@user,@pass,@imie,@nazwisko,@tel,@mail)";
                     SqlCommand command = new SqlCommand(commandText, conn);
                     command.Parameters.Add(new SqlParameter("user", numerkart));
@@ -83,7 +94,8 @@ namespace START
                 }
                 catch
                 {
-                    info.Text = "Błędne dane, popraw.";
+                    string info = "Brak dostępu do sieci.";
+                    Toast.MakeText(this, info, ToastLength.Long).Show();
                 }
                 finally
                 {
@@ -91,7 +103,5 @@ namespace START
                 }
             }
         }
-
-
     }
 }

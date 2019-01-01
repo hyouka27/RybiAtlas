@@ -77,9 +77,9 @@ namespace START
                 conn.Open();
                 try
                 {
-                    string commandText = "SELECT skladka FROM okregi WHERE nazwaokregu LIKE @users";
+                    string commandText = "SELECT skladka FROM okregi WHERE nazwaokregu LIKE @user";
                     SqlCommand command = new SqlCommand(commandText, conn);
-                    command.Parameters.Add(new SqlParameter("users", numerkart));
+                    command.Parameters.Add(new SqlParameter("user", numerkart));
                     command.ExecuteNonQuery();
                     SqlDataReader czytaj = command.ExecuteReader();
                     while (czytaj.Read())

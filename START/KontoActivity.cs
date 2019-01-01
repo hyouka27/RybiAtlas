@@ -16,12 +16,18 @@ namespace START
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
     public class KontoActivity : AppCompatActivity
     {
+        /// <summary>
+        /// Zmienne
+        /// </summary>
         private TextView imie;
         private TextView nazwisko;
         private TextView tel;
         private TextView mail;
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            /// <summary>
+            /// Zawiera opisy elementów przypisane do gui jak i metody.
+            /// </summary>
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_konto);
             imie = FindViewById<TextView>(Resource.Id.getimie);
@@ -33,10 +39,10 @@ namespace START
             Podajtel(LinkBaza.numer);
             Podajmail(LinkBaza.numer); 
         }
-     
-               
-           
-        
+
+        /// <summary>
+        /// Metoda która wyświetla nam z bazy imie użytkownika na bazie jego numerukarty jako punktu odniesienia.
+        /// </summary>
         void Podajimie(int numerkart)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
@@ -63,6 +69,9 @@ namespace START
                 }
             }
         }
+        /// <summary>
+        /// Metoda wyświetla nam z bazy nazwisko użytkownika. 
+        /// </summary>
         void Podajnazwisko(int numerkart)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
@@ -89,6 +98,9 @@ namespace START
                 }
             }
         }
+        /// <summary>
+        /// Metoda wyświetla nam z bazy numer telefonu użytkownika.
+        /// </summary>
         void Podajtel(int numerkart)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
@@ -117,6 +129,9 @@ namespace START
                 }
             }
         }
+        /// <summary>
+        /// Metoda wyświelta nam z bazy mail użytkownika.
+        /// </summary>
         void Podajmail(int numerkart)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
@@ -143,7 +158,5 @@ namespace START
                 }
             }
         }
-
-
     }
 }
