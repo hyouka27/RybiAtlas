@@ -8,6 +8,7 @@ using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.V7.App;
+using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
@@ -22,6 +23,7 @@ namespace START
         private TextView Indeks1;
         private TextView UrlObrazka1;
         private TextView Opis1;
+        private RecyclerView listaryb;
         public string Nazwaryby { get; set; }
         public string Opis { get; set; }
         public string Indeks { get; set; }
@@ -34,6 +36,8 @@ namespace START
             Indeks1 = FindViewById<TextView>(Resource.Id.Indeks1);
             UrlObrazka1 = FindViewById<TextView>(Resource.Id.Obrazek);
             Opis1 = FindViewById<TextView>(Resource.Id.Opis1);
+            listaryb = FindViewById<RecyclerView>(Resource.Id.listaryb);
+
             using (var webClient = new System.Net.WebClient())
             {
                 var json = webClient.DownloadString("http://hyouka27.usermd.net/WENDKA/ryby.json");
