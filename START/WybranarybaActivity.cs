@@ -14,7 +14,7 @@ using Newtonsoft.Json.Linq;
 
 namespace START
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
+    [Activity(Label = "@string/wybranaryba", Theme = "@style/AppTheme")]
     public class WybranarybaActivity : AppCompatActivity
     {
         private TextView NazwaRyby1;

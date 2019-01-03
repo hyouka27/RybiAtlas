@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace START
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
+    [Activity(Label = "@string/rejestracja", Theme = "@style/AppTheme")]
     public class RejestracjaActivity : AppCompatActivity
     {
         /// <summary>

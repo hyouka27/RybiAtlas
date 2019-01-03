@@ -8,10 +8,7 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/NazwaRyby1" />
-	<TextView
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/Opis1" />
+	
 	<TextView
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
@@ -21,10 +18,14 @@
 		android:layout_height="wrap_content"
 		android:id="@+id/Obrazek" />
 	<Button
+		android:id="@+id/opisryby"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="OPIS RYBY" />
+	<Button
 		android:id="@+id/dodaj"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:text="DODAJ DO ULUBIONYCH"
-	/>
+		android:text="DODAJ DO ULUBIONYCH" />
 	
 </LinearLayout>

@@ -14,7 +14,7 @@ using Android.Widget;
 
 namespace START
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
+    [Activity(Label = "@string/wybranyokreg", Theme = "@style/AppTheme")]
     public class WybranyokregActivity : AppCompatActivity
     {
      

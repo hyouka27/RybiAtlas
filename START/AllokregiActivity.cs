@@ -14,7 +14,7 @@ using Android.Widget;
 
 namespace START
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
+    [Activity(Label = "@string/allokregi", Theme = "@style/AppTheme")]
     public class AllokregiActivity :AppCompatActivity
     {
         /// <summary>

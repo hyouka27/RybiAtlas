@@ -69,6 +69,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="MenuActivity.cs" />
     <Compile Include="OkregiActivity.cs" />
+    <Compile Include="OpisrybyActivity.cs" />
     <Compile Include="RegulActivity.cs" />
     <Compile Include="RegulokregActivity.cs" />
     <Compile Include="RejestracjaActivity.cs" />
@@ -192,6 +193,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\item_ryba.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\activity_opisryby.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

@@ -13,7 +13,7 @@ using Android.Widget;
 
 namespace START
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
+    [Activity(Label = "@string/listalowisk", Theme = "@style/AppTheme")]
     public class ListalowiskActivity : AppCompatActivity
     {
         /// <summary>

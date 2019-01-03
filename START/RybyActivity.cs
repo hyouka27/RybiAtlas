@@ -15,7 +15,7 @@ using Newtonsoft.Json.Linq;
 
 namespace START
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
+    [Activity(Label = "@string/ryby", Theme = "@style/AppTheme")]
     public class RybyActivity : AppCompatActivity
     {
         private List<string> listaryblista;

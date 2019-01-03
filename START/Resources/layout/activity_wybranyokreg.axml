@@ -32,7 +32,7 @@
 		android:layout_height="wrap_content"
 		android:id="@+id/btnregulokreg" />
 	<Button
-		android:text="OPŁAC OKRĘG"
+		android:text="OPŁAć OKRĘG"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/dodajoplacone" />

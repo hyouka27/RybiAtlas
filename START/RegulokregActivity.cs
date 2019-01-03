@@ -13,7 +13,7 @@ using Android.Widget;
 
 namespace START
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme")]
+    [Activity(Label = "@string/regulokreg", Theme = "@style/AppTheme")]
     public class RegulokregActivity : AppCompatActivity
     {
         /// <summary>
