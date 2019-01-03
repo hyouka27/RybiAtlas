@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using Android.App;
@@ -18,9 +19,9 @@ namespace START
     {
         private TextView NazwaRyby1;
         private TextView Indeks1;
-        private Uri Obrazek;
+        private ImageView Obrazek;
         private TextView Opis1;
-        private Button Dodaj;
+        private Button dodaj;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -28,61 +29,143 @@ namespace START
             SetContentView(Resource.Layout.activity_wybranaryba);
             NazwaRyby1 = FindViewById<TextView>(Resource.Id.NazwaRyby1);
             Indeks1 = FindViewById<TextView>(Resource.Id.Indeks1);
-            //Obrazek = FindViewById<Uri>(Resource.Id.Obrazek);
+            Obrazek = FindViewById<ImageView>(Resource.Id.Obrazek);
             Opis1 = FindViewById<TextView>(Resource.Id.Opis1);
+            dodaj = FindViewById<Button>(Resource.Id.dodaj);
             Podajnazwe(LinkBaza.Nazwa);
-            PodajOpis(LinkBaza.Opis);
-            //Pokaobraz();
-
+            Podajopis(LinkBaza.Nazwa);
+            Podajindeks(LinkBaza.Nazwa);
+            Podajobraz(LinkBaza.Nazwa);
+            dodaj.Click += Dodaj_Click;
         }
 
-        void Podajnazwe(string nazwar)
+/// <summary>
+
+/// </summary>
+private void Dodaj_Click(object sender, System.EventArgs e)
+{
+            InsertInfo2(LinkBaza.Nazwa, LinkBaza.numer, LinkBaza.Obrazek, LinkBaza.Opis, LinkBaza.Indeks);
+}
+
+
+void Podajnazwe(string nazwa)
         {
-            using (var webClient = new System.Net.WebClient())
+            NazwaRyby1.Text = LinkBaza.Nazwa;
+        }
+
+void Podajopis(string nazwar)
+        {
+            using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
             {
-                var json = webClient.DownloadString("http://hyouka27.usermd.net/WENDKA/ryby.json");
-                JObject rybki = JObject.Parse(json);
-                //Opis1.Text = (string)rybki["ryby"][0]["Opis"];
-                //Indeks1.Text = (string)rybki["ryby"][0]["Indeks"];
-                //UrlObrazka1.Text = (string)rybki["ryby"][0]["Url_Obrazka"];
-                var NazwaRyby = from p in rybki["ryby"] select (string)p["NazwaRyby"];
-                foreach (var item in NazwaRyby)
+                conn.Open();
+                try
                 {
-                    if (item == LinkBaza.Nazwa)
+                    string commandText = "select Opis from rybki WHERE Nazwaryby LIKE @user";
+                    SqlCommand command = new SqlCommand(commandText, conn);
+                    command.Parameters.Add(new SqlParameter("user", nazwar));
+                    command.ExecuteNonQuery();
+                    SqlDataReader czytaj = command.ExecuteReader();
+                    while (czytaj.Read())
                     {
-                        NazwaRyby1.Text = nazwar;
+                        Opis1.Text = czytaj.GetString(0);
+                        LinkBaza.Opis = czytaj.GetString(0);
                     }
+                }
+                catch
+                {
+                }
+                finally
+                {
+                    conn.Close();
                 }
             }
         }
 
-        void PodajOpis(string nazwar)
+void Podajindeks(string nazwar)
         {
-            Opis1.Text = nazwar;
+            using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
+            {
+                conn.Open();
+                try
+                {
+                    string commandText = "select idryby from rybki WHERE Nazwaryby LIKE @user";
+                    SqlCommand command = new SqlCommand(commandText, conn);
+                    command.Parameters.Add(new SqlParameter("user", nazwar));
+                    command.ExecuteNonQuery();
+                    SqlDataReader czytaj = command.ExecuteReader();
+                    while (czytaj.Read())
+                    {
+                        LinkBaza.Indeks = czytaj.GetInt32(0);
+                    }
+                }
+                catch
+                {
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
         }
 
-        //void Pokaobraz()
-        //{
-        //    using (var webClient = new System.Net.WebClient())
-        //    {
-        //        List<string> listaryblista2 = new List<string>();
-        //        var json = webClient.DownloadString("http://hyouka27.usermd.net/WENDKA/ryby.json");
-        //        JObject rybki = JObject.Parse(json);
-        //        //Opis1.Text = (string)rybki["ryby"][0]["Opis"];
-        //        //Indeks1.Text = (string)rybki["ryby"][0]["Indeks"];
-        //        //UrlObrazka1.Text = (string)rybki["ryby"][0]["Url_Obrazka"];
-        //        var Opis = from a in rybki["ryby"] /*where /*p.Contains(LinkBaza.Nazwa)*/ select (string)a["Opis"];
+void Podajobraz(string nazwar)
+        {
+            using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
+            {
+                conn.Open();
+                try
+                {
+                    string commandText = "select URLObrazka from rybki WHERE Nazwaryby LIKE @user";
+                    SqlCommand command = new SqlCommand(commandText, conn);
+                    command.Parameters.Add(new SqlParameter("user", nazwar));
+                    command.ExecuteNonQuery();
+                    SqlDataReader czytaj = command.ExecuteReader();
+                    while (czytaj.Read())
+                    {
+                        LinkBaza.Obrazek = czytaj.GetString(0);
+                        Opis1.Text = czytaj.GetString(0);
+                    }
+                }
+                catch
+                {
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
 
-        //        foreach (var item in Opis)
-        //        {
-        //            listaryblista2.Add(item);
-        //            if (LinkBaza.licznik == listaryblista2.Count())
-        //            {
-        //                Toast.MakeText(this, item, ToastLength.Long).Show();
-        //                Opis1.Text = item;
-        //            }
-        //        }
-        //    }
-        //}
+        }
+
+ void InsertInfo2(string nazwaryby, int numerkart, string obrazek, string opis, int indeks)
+        {
+            using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
+            {
+                try
+                {
+                    conn.Open();
+                    string commandText = "insert into Ulubione (Nazwaryby,numerkart,obrazek,opis,indeks) values(@user,@pass,@imie,@nazwisko,@tel)";
+                    SqlCommand command = new SqlCommand(commandText, conn);
+                    command.Parameters.Add(new SqlParameter("user", nazwaryby));
+                    command.Parameters.Add(new SqlParameter("pass", numerkart));
+                    command.Parameters.Add(new SqlParameter("imie", obrazek));
+                    command.Parameters.Add(new SqlParameter("nazwisko", opis));
+                    command.Parameters.Add(new SqlParameter("tel", indeks));
+                    command.ExecuteNonQuery();
+                    conn.Close();
+                    var menu = new Intent(this, typeof(MenuActivity));
+                    StartActivity(menu);
+                }
+                catch
+                {
+                    string info = "Brak dostępu do sieci.";
+                    Toast.MakeText(this, info, ToastLength.Long).Show();
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+        }
     }
 }

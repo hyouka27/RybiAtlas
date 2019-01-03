@@ -20,8 +20,10 @@ namespace START
     {
     public static string Nazwa;
     public static string Opis;
+    public static string Obrazek;
     public static int licznik;
     public static int numer;
+    public static int Indeks;
     public static string lowsikobaza;
     public static string okregbaza;
     public static string connString = @"workstation id=testowa.mssql.somee.com;packet size=4096;user id=hyouka27_SQLLogin_1;pwd=1234567*;data source=testowa.mssql.somee.com;persist security info=False;initial catalog=testowa";
