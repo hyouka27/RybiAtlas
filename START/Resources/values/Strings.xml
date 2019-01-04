@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LOGOWANIE</string>
+    <string name="app_name">START</string>
   <string name="allokregi">Lista okręgów</string>
   <string name="konto">TWOJE KONTO</string>
   <string name="listalowisk">Lista łowisk</string>
@@ -15,4 +15,5 @@
   <string name="wybranaryba">Szczegóły ryby</string>
   <string name="wybranelowisko">Szczegóły łowiska</string>
   <string name="wybranyokreg">Szczegóły okręgu</string>
+  <string name="logowanie">LOGOWANIE</string>
 </resources>

@@ -3438,6 +3438,9 @@ namespace START
 			// aapt resource value: 0x7f09002a
 			public const int listalowisk = 2131296298;
 			
+			// aapt resource value: 0x7f090037
+			public const int logowanie = 2131296311;
+			
 			// aapt resource value: 0x7f09002b
 			public const int menu = 2131296299;
 			
