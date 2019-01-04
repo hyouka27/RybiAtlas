@@ -161,9 +161,9 @@ void Podajobraz(int nazwar)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
             {
+                conn.Open();
                 try
                 {
-                    conn.Open();
                         string commandText = "DELETE FROM Ulubione WHERE numerkart=@pass AND idryby=@tel";
                         SqlCommand command = new SqlCommand(commandText, conn);
                         command.Parameters.Add(new SqlParameter("pass", numerkart));
@@ -176,7 +176,13 @@ void Podajobraz(int nazwar)
                 
                 catch
                 {
-                    string info = "Brak dostępu do sieci.";
+                    string commandText = "DELETE FROM Ulubione WHERE numerkart=@pass AND idryby=@tel";
+                    SqlCommand command = new SqlCommand(commandText, conn);
+                    command.Parameters.Add(new SqlParameter("pass", numerkart));
+                    command.Parameters.Add(new SqlParameter("tel", indeks));
+                    command.ExecuteNonQuery();
+                    conn.Close();
+                    string info = "Usunięto z ulubionych.";
                     Toast.MakeText(this, info, ToastLength.Long).Show();
                 }
                 finally
