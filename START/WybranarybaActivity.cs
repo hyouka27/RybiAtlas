@@ -141,6 +141,7 @@ void Podajobraz(int nazwar)
 
         }
 
+
  void InsertInfo2(string nazwaryby, int numerkart, string obrazek, string opis, int indeks)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
