@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -63,7 +62,7 @@ namespace START
         }
         private void ListaVClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            var lowsiko = new Intent(this, typeof(WybranelowiskoActivity));
+            var lowsiko = new Intent(this, typeof(WybranarybaActivity));
             StartActivity(lowsiko);
             string lowisko1 = ulub[e.Position];
             LinkBaza.Nazwa = lowisko1;

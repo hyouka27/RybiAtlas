@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.Icu.Util;
 using Android.OS;
 using Android.Runtime;
@@ -16,41 +20,49 @@ using Newtonsoft.Json.Linq;
 namespace START
 {
     [Activity(Label = "@string/wybranaryba", Theme = "@style/AppTheme")]
-    public class WybranarybaActivity : AppCompatActivity
+    public class Wybranarybaulubione : AppCompatActivity
     {
         private TextView NazwaRyby1;
         private TextView Indeks1;
         private ImageView Obrazek;
         private TextView Opis1;
-        private Button dodaj;
-        private Button opisryby;
+        private Button usun;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.activity_wybranaryba);
+            SetContentView(Resource.Layout.item_ryba);
             NazwaRyby1 = FindViewById<TextView>(Resource.Id.NazwaRyby1);
             Indeks1 = FindViewById<TextView>(Resource.Id.Indeks1);
             Obrazek = FindViewById<ImageView>(Resource.Id.Obrazek);
             Opis1 = FindViewById<TextView>(Resource.Id.Opis1);
-            dodaj = FindViewById<Button>(Resource.Id.dodaj);
-            opisryby = FindViewById<Button>(Resource.Id.opisryby);
+            usun= FindViewById<Button>(Resource.Id.usun);
             Podajnazwe(LinkBaza.Nazwa);
             Podajobraz(LinkBaza.Indeks);
             Podajopis(LinkBaza.Indeks);
-            dodaj.Click += Dodaj_Click;
-            opisryby.Click += Opisryby_Click;
+            usun.Click += Usun_Click;
+            string linkobrazek = LinkBaza.Obrazek;
         }
 
-private void Opisryby_Click(object sender, EventArgs e)
+        private async Task<Bitmap> GetImageBitmapFromUrlAsync(string linkobrazek)
         {
-            var rybyopis = new Intent(this, typeof(OpisrybyActivityy));
-            StartActivity(rybyopis);
+            Bitmap imageBitmap = null;
+
+            using (var httpClient = new HttpClient())
+            {
+                var imageBytes = await httpClient.GetByteArrayAsync(linkobrazek);
+                if (imageBytes != null && imageBytes.Length > 0)
+                {
+                    imageBitmap = BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
+                }
+            }
+            
+            return imageBitmap;
         }
 
-private void Dodaj_Click(object sender, System.EventArgs e)
+        private void Usun_Click(object sender, System.EventArgs e)
 {
-            InsertInfo2(LinkBaza.Nazwa, LinkBaza.numer, LinkBaza.Obrazek, LinkBaza.Opis, LinkBaza.Indeks);
+            InsertInfo2(LinkBaza.numer, LinkBaza.Indeks);
 }
 
 
@@ -62,7 +74,7 @@ void Podajnazwe(string nazwa)
                 conn.Open();
                 try
                 {
-                    string commandText = "select idryby from rybki WHERE Nazwaryby LIKE @user";
+                    string commandText = "select idryby from Ulubione WHERE Nazwaryby LIKE @user";
                     SqlCommand command = new SqlCommand(commandText, conn);
                     command.Parameters.Add(new SqlParameter("user", nazwa));
                     command.ExecuteNonQuery();
@@ -91,14 +103,14 @@ void Podajopis(int nazwar)
                 conn.Open();
                 try
                 {
-                    string commandText = "select Opis from rybki WHERE idryby LIKE @user";
+                    string commandText = "select Opis from Ulubione WHERE idryby LIKE @user";
                     SqlCommand command = new SqlCommand(commandText, conn);
                     command.Parameters.Add(new SqlParameter("user", nazwar));
                     command.ExecuteNonQuery();
                     SqlDataReader czytaj = command.ExecuteReader();
                     foreach (var item in czytaj)
                     {
-                        LinkBaza.Opis = czytaj.GetString(0);
+                        Opis1.Text = czytaj.GetString(0);
                     }
                 }
                 catch
@@ -119,15 +131,18 @@ void Podajobraz(int nazwar)
                 conn.Open();
                 try
                 {
-                    string commandText = "select URLObrazka from rybki WHERE idryby LIKE @user";
+                    string commandText = "select URLObrazka from Ulubione WHERE idryby LIKE @user";
                     SqlCommand command = new SqlCommand(commandText, conn);
                     command.Parameters.Add(new SqlParameter("user", nazwar));
                     command.ExecuteNonQuery();
                     SqlDataReader czytaj = command.ExecuteReader();
                     foreach (var item in czytaj)
                     {
-                        LinkBaza.Obrazek = czytaj.GetString(0);
-                       // Opis1.Text = czytaj.GetString(0);
+                       LinkBaza.Obrazek = czytaj.GetString(0);
+
+                        //Obrazek.SetImageURI(TEST);
+                        //Obrazek ImageView = czytaj.GetString(0);
+
                     }
                 }
                 catch
@@ -141,49 +156,24 @@ void Podajobraz(int nazwar)
 
         }
 
- void InsertInfo2(string nazwaryby, int numerkart, string obrazek, string opis, int indeks)
+
+ void InsertInfo2(int numerkart, int indeks)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
             {
                 try
                 {
                     conn.Open();
-                    string Output = "";
-                    string commandText2 = "select count(*) as cnt from Ulubione WHERE numerkart=@user AND idryby LIKE @pass AND Nazwaryby LIKE @nazwa";
-                    SqlCommand command2 = new SqlCommand(commandText2, conn);
-                    command2.Parameters.Add(new SqlParameter("user", numerkart));
-                    command2.Parameters.Add(new SqlParameter("pass", indeks));
-                    command2.Parameters.Add(new SqlParameter("nazwa", nazwaryby));
-                    command2.ExecuteNonQuery();
-                    SqlDataReader czytaj = command2.ExecuteReader();
-                    while (czytaj.Read())
-                    {
-                        Output = Output + czytaj.GetValue(0);
-                    }
-                    int test;
-                    test = Int32.Parse(Output);
-                    if (test == 1)
-                    {
-                        string info = "Dodałeś już tą rybę do ulubionych.";
-                        Toast.MakeText(this, info, ToastLength.Long).Show();
-                        conn.Close();
-                    }
-                    else
-                    {
-
-                        string commandText = "insert into Ulubione (Nazwaryby,numerkart,obrazek,opis,idryby) values(@user,@pass,@imie,@nazwisko,@tel)";
+                        string commandText = "DELETE FROM Ulubione WHERE numerkart=@pass AND idryby=@tel";
                         SqlCommand command = new SqlCommand(commandText, conn);
-                        command.Parameters.Add(new SqlParameter("user", nazwaryby));
                         command.Parameters.Add(new SqlParameter("pass", numerkart));
-                        command.Parameters.Add(new SqlParameter("imie", obrazek));
-                        command.Parameters.Add(new SqlParameter("nazwisko", opis));
                         command.Parameters.Add(new SqlParameter("tel", indeks));
                         command.ExecuteNonQuery();
                         conn.Close();
-                        string info = "Dodano do ulubionych.";
+                        string info = "Usunięto z ulubionych.";
                         Toast.MakeText(this, info, ToastLength.Long).Show();
                     }
-                }
+                
                 catch
                 {
                     string info = "Brak dostępu do sieci.";

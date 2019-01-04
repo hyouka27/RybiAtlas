@@ -59,7 +59,6 @@ namespace START
             string okregall1 = listaryblista[e.Position];
             LinkBaza.Nazwa = okregall1;
             Toast.MakeText(this, okregall1, ToastLength.Long).Show();
-            
         }
     }
 }
