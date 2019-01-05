@@ -142,13 +142,13 @@ void Podajobraz(int nazwar)
         }
 
 
- void InsertInfo2(string nazwaryby, int numerkart, string obrazek, string opis, int indeks)
+        void InsertInfo2(string nazwaryby, int numerkart, string obrazek, string opis, int indeks)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
             {
+                conn.Open();
                 try
                 {
-                    conn.Open();
                     string Output = "";
                     string commandText2 = "select count(*) as cnt from Ulubione WHERE numerkart=@user AND idryby LIKE @pass AND Nazwaryby LIKE @nazwa";
                     SqlCommand command2 = new SqlCommand(commandText2, conn);
@@ -165,14 +165,13 @@ void Podajobraz(int nazwar)
                     test = Int32.Parse(Output);
                     if (test == 1)
                     {
-                        string info = "Dodałeś już tą rybę do ulubionych.";
-                        Toast.MakeText(this, info, ToastLength.Long).Show();
+                        string info3 = "Dodałeś już tą rybę do ulubionych.";
+                        Toast.MakeText(this, info3, ToastLength.Long).Show();
                         conn.Close();
                     }
                     else
                     {
-
-                        string commandText = "insert into Ulubione (Nazwaryby,numerkart,obrazek,opis,idryby) values(@user,@pass,@imie,@nazwisko,@tel)";
+                        string commandText = "insert into Ulubione (idryby,Nazwaryby,numerkart,obrazek,opis) values(@tel,@user,@pass,@imie,@nazwisko)";
                         SqlCommand command = new SqlCommand(commandText, conn);
                         command.Parameters.Add(new SqlParameter("user", nazwaryby));
                         command.Parameters.Add(new SqlParameter("pass", numerkart));
@@ -180,20 +179,30 @@ void Podajobraz(int nazwar)
                         command.Parameters.Add(new SqlParameter("nazwisko", opis));
                         command.Parameters.Add(new SqlParameter("tel", indeks));
                         command.ExecuteNonQuery();
-                        conn.Close();
                         string info = "Dodano do ulubionych.";
                         Toast.MakeText(this, info, ToastLength.Long).Show();
+                        conn.Close();
                     }
+
                 }
                 catch
                 {
-                    string info = "Brak dostępu do sieci.";
-                    Toast.MakeText(this, info, ToastLength.Long).Show();
+                    string commandText = "insert into Ulubione (idryby,Nazwaryby,numerkart,obrazek,opis) values(@tel,@user,@pass,@imie,@nazwisko)";
+                    SqlCommand command = new SqlCommand(commandText, conn);
+                    command.Parameters.Add(new SqlParameter("user", nazwaryby));
+                    command.Parameters.Add(new SqlParameter("pass", numerkart));
+                    command.Parameters.Add(new SqlParameter("imie", obrazek));
+                    command.Parameters.Add(new SqlParameter("nazwisko", opis));
+                    command.Parameters.Add(new SqlParameter("tel", indeks));
+                    command.ExecuteNonQuery();
+                    string info2 = "Dodano do ulubionych.";
+                    Toast.MakeText(this, info2, ToastLength.Long).Show();
                 }
                 finally
                 {
                     conn.Close();
                 }
+
             }
         }
     }

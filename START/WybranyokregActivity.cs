@@ -20,6 +20,7 @@ namespace START
      
         private Button btnlowiska;
         private Button btnregulokreg;
+        private Button dodajoplacone;
         private TextView getnazwaokregu;
         private TextView getskladka;
 
@@ -29,6 +30,7 @@ namespace START
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_wybranyokreg);
             btnlowiska = FindViewById<Button>(Resource.Id.btnlowiska);
+            dodajoplacone = FindViewById<Button>(Resource.Id.dodajoplacone);
             btnlowiska.Click += delegate {
                 var lowiska = new Intent(this, typeof(ListalowiskActivity));
                 StartActivity(lowiska);
@@ -44,6 +46,9 @@ namespace START
             Podajskladke(LinkBaza.okregbaza);
 
         }
+
+       
+
         void Podajnazweokregu(string numerkart)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
