@@ -193,12 +193,12 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\item_ryba.axml">
+    <AndroidResource Include="Resources\layout\activity_opisryby.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\activity_opisryby.axml">
+    <AndroidResource Include="Resources\layout\activity_rybaulub.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

@@ -31,7 +31,7 @@ namespace START
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.item_ryba);
+            SetContentView(Resource.Layout.activity_rybaulub);
             NazwaRyby1 = FindViewById<TextView>(Resource.Id.NazwaRyby1);
             Indeks1 = FindViewById<TextView>(Resource.Id.Indeks1);
             Obrazek = FindViewById<ImageView>(Resource.Id.Obrazek);
