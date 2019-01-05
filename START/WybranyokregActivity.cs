@@ -152,7 +152,7 @@ namespace START
                 {
                     conn.Open();
                     string Output = "";
-                    string commandText = "select count(*) as cnt from oplacone WHERE numerkarty=@user AND idokregu LIKE @mail";
+                    string commandText = "select count(idokregu) as cnt from oplacone WHERE numerkarty=@user AND idokregu LIKE @mail AND oplacone LIKE 'tak'";
                     SqlCommand command = new SqlCommand(commandText, conn);
                     command.Parameters.Add(new SqlParameter("user", numer));
                     command.Parameters.Add(new SqlParameter("pass", mail));
@@ -184,7 +184,6 @@ namespace START
                         StartActivity(menu);
 
                     }
-                    
                 }
                 catch
                 {
