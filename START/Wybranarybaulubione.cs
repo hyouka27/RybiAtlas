@@ -37,73 +37,50 @@ namespace START
             Obrazek = FindViewById<ImageView>(Resource.Id.Obrazek);
             Opis1 = FindViewById<TextView>(Resource.Id.Opis1);
             usun= FindViewById<Button>(Resource.Id.usun);
-            Podajnazwe(LinkBaza.Nazwa);
-            Podajobraz(LinkBaza.Indeks);
-            Podajopis(LinkBaza.Indeks);
+            Podajnazwe(LinkBaza.Nazwa2);
+            Podajobraz(LinkBaza.Nazwa2);
+            Podajopis(LinkBaza.Nazwa2);
             usun.Click += Usun_Click;
-            string linkobrazek = LinkBaza.Obrazek;
+            //string linkobrazek = LinkBaza.Obrazek;
         }
 
-        private async Task<Bitmap> GetImageBitmapFromUrlAsync(string linkobrazek)
-        {
-            Bitmap imageBitmap = null;
+        //private async Task<Bitmap> GetImageBitmapFromUrlAsync(string linkobrazek)
+        //{
+        //    Bitmap imageBitmap = null;
 
-            using (var httpClient = new HttpClient())
-            {
-                var imageBytes = await httpClient.GetByteArrayAsync(linkobrazek);
-                if (imageBytes != null && imageBytes.Length > 0)
-                {
-                    imageBitmap = BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
-                }
-            }
+        //    using (var httpClient = new HttpClient())
+        //    {
+        //        var imageBytes = await httpClient.GetByteArrayAsync(linkobrazek);
+        //        if (imageBytes != null && imageBytes.Length > 0)
+        //        {
+        //            imageBitmap = BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
+        //        }
+        //    }
             
-            return imageBitmap;
-        }
+        //    return imageBitmap;
+        //}
 
-        private void Usun_Click(object sender, System.EventArgs e)
-{
-            InsertInfo2(LinkBaza.numer, LinkBaza.Indeks);
-}
+
+private void Usun_Click(object sender, System.EventArgs e) { 
+
+            InsertInfo2(LinkBaza.numer, LinkBaza.Nazwa2);
+            var menu = new Intent(this, typeof(MenuActivity));
+            StartActivity(menu);
+        }
 
 
 void Podajnazwe(string nazwa)
         {
-            NazwaRyby1.Text = LinkBaza.Nazwa;
-            using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
-            {
-                conn.Open();
-                try
-                {
-                    string commandText = "select idryby from Ulubione WHERE Nazwaryby LIKE @user";
-                    SqlCommand command = new SqlCommand(commandText, conn);
-                    command.Parameters.Add(new SqlParameter("user", nazwa));
-                    command.ExecuteNonQuery();
-                    SqlDataReader czytaj = command.ExecuteReader();
-                    foreach (var item in czytaj)
-                    {
-                        int i = 0;
-                        LinkBaza.Indeks = czytaj.GetInt32(i);
-                        i++;
-                    }
-                }
-                catch
-                {
-                }
-                finally
-                {
-                    conn.Close();
-                }
-            }
+            NazwaRyby1.Text = LinkBaza.Nazwa2;
         }
-
-void Podajopis(int nazwar)
+void Podajopis(string nazwar)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
             {
                 conn.Open();
                 try
                 {
-                    string commandText = "select Opis from Ulubione WHERE idryby LIKE @user";
+                    string commandText = "select Opis from Ulubione WHERE Nazwaryby LIKE @user";
                     SqlCommand command = new SqlCommand(commandText, conn);
                     command.Parameters.Add(new SqlParameter("user", nazwar));
                     command.ExecuteNonQuery();
@@ -124,14 +101,14 @@ void Podajopis(int nazwar)
         }
 
 
-void Podajobraz(int nazwar)
+void Podajobraz(string nazwar)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
             {
                 conn.Open();
                 try
                 {
-                    string commandText = "select URLObrazka from Ulubione WHERE idryby LIKE @user";
+                    string commandText = "select URLObrazka from Ulubione WHERE Nazwaryby LIKE @user";
                     SqlCommand command = new SqlCommand(commandText, conn);
                     command.Parameters.Add(new SqlParameter("user", nazwar));
                     command.ExecuteNonQuery();
@@ -157,14 +134,14 @@ void Podajobraz(int nazwar)
         }
 
 
- void InsertInfo2(int numerkart, int indeks)
+ void InsertInfo2(int numerkart, string indeks)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
             {
                 conn.Open();
                 try
                 {
-                        string commandText = "DELETE FROM Ulubione WHERE numerkart=@pass AND idryby=@tel";
+                        string commandText = "DELETE FROM Ulubione WHERE numerkart=@pass AND Nazwaryby=@tel";
                         SqlCommand command = new SqlCommand(commandText, conn);
                         command.Parameters.Add(new SqlParameter("pass", numerkart));
                         command.Parameters.Add(new SqlParameter("tel", indeks));
@@ -176,7 +153,7 @@ void Podajobraz(int nazwar)
                 
                 catch
                 {
-                    string commandText = "DELETE FROM Ulubione WHERE numerkart=@pass AND idryby=@tel";
+                    string commandText = "DELETE FROM Ulubione WHERE numerkart=@pass AND Nazwaryby=@tel";
                     SqlCommand command = new SqlCommand(commandText, conn);
                     command.Parameters.Add(new SqlParameter("pass", numerkart));
                     command.Parameters.Add(new SqlParameter("tel", indeks));

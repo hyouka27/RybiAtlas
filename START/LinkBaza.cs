@@ -19,6 +19,7 @@ namespace START
     public static class LinkBaza
     {
     public static string Nazwa;
+    public static string Nazwa2;
     public static string Opis;
     public static string Obrazek;
     public static int licznik;

@@ -62,11 +62,11 @@ namespace START
         }
         private void ListaVClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            var lowsiko = new Intent(this, typeof(WybranarybaActivity));
-            StartActivity(lowsiko);
-            string lowisko1 = ulub[e.Position];
-            LinkBaza.Nazwa = lowisko1;
-            Toast.MakeText(this, lowisko1, ToastLength.Long).Show();
+            var ulub2 = new Intent(this, typeof(Wybranarybaulubione));
+            StartActivity(ulub2);
+            string ulubiona = ulub[e.Position];
+            LinkBaza.Nazwa2 = ulubiona;
+            Toast.MakeText(this, ulubiona, ToastLength.Long).Show();
         }
     }
  

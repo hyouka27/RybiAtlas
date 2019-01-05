@@ -60,7 +60,7 @@ namespace START
                 conn.Open();
                 try
                 {
-                    string commandText = "SELECT nazwaokregu FROM okregi INNER JOIN oplacone ON okregi.idokregu=oplacone.idokregu WHERE oplacone LIKE 'tak' AND numerkart LIKE @user";
+                    string commandText = "SELECT nazwaokregu FROM okregi INNER JOIN oplacone ON okregi.idokregu=oplacone.idokregu WHERE oplacone LIKE 'tak' AND numerkarty LIKE @user";
                     SqlCommand command = new SqlCommand(commandText, conn);
                     command.Parameters.Add(new SqlParameter("user", numerkart));
                     command.ExecuteNonQuery();
