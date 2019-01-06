@@ -1,0 +1,2 @@
+# WENDKA
+Simple app
