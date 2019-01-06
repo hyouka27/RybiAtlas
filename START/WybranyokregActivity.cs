@@ -152,7 +152,7 @@ namespace START
                 {
                     conn.Open();
                     string Output = "";
-                    string commandText = "select count(idokregu) as cnt from oplacone WHERE numerkarty=@user AND idokregu LIKE @mail AND oplacone LIKE 'tak'";
+                    string commandText = "select count(idokregu) as cnt from oplacone WHERE numerkarty=@user AND idokregu LIKE @pass AND oplacone LIKE 'tak'";
                     SqlCommand command = new SqlCommand(commandText, conn);
                     command.Parameters.Add(new SqlParameter("user", numer));
                     command.Parameters.Add(new SqlParameter("pass", mail));
@@ -164,7 +164,7 @@ namespace START
                     }
                     int test;
                     test = Int32.Parse(Output);
-                    if (test == 1)
+                    if (test>=1)
                     {
                         string info = "Wybrany okręg jest już opłacony.";
                         Toast.MakeText(this, info, ToastLength.Long).Show();
@@ -182,15 +182,20 @@ namespace START
                         conn.Close();
                         var menu = new Intent(this, typeof(MenuActivity));
                         StartActivity(menu);
-
                     }
                 }
                 catch
                 {
-                    string info = "Wybrany okręg jest już opłacony.";
-                    Toast.MakeText(this, info, ToastLength.Long).Show();
-                    var menu = new Intent(this, typeof(MenuActivity));
-                    StartActivity(menu);
+                    conn.Close();
+                    conn.Open();
+                    string commandText2 = "insert into oplacone(numerkarty,idokregu,oplacone) values(@user,@mail,'tak')";
+                        SqlCommand command2 = new SqlCommand(commandText2, conn);
+                        command2.Parameters.Add(new SqlParameter("user", numer));
+                        command2.Parameters.Add(new SqlParameter("mail", mail));
+                        command2.ExecuteNonQuery();
+                        conn.Close();
+                        var menu = new Intent(this, typeof(MenuActivity));
+                        StartActivity(menu);
                 }
                 finally
                 {
