@@ -1,74 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-	xmlns:android="http://schemas.android.com/apk/res/android"
+	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent">
-	<TextView
-		android:text="MENU"
-		android:textAlignment="center"
-		android:textSize="50px"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/textView1" />
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent">
+	<TableLayout
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"	>
+		<TableRow
+			android:layout_height="fill_parent"
+              android:layout_width="fill_parent"
+              android:weightSum ="20">
+	
 	<Button
 		android:text="TWOJE KONTO"
-		android:textSize="60px"
-		android:layout_width="400px"
-		android:layout_height="300px"
-		android:minWidth="25px"
-		android:minHeight="25px"
-		android:layout_marginTop="75px"
+		android:textSize="20dp"
+		android:layout_height="fill_parent"
+              android:layout_width="fill_parent"
+
+		android:layout_weight="10"
+		android:layout_marginTop="15dp"
 		android:id="@+id/btnkonto" />
 	<Button
 		android:text="OPŁACONE OKRĘGI"
-		android:textSize="60px"
-		android:layout_width="400px"
-		android:layout_height="300px"
-		android:minWidth="25px"
-		android:minHeight="25px"
-		android:layout_marginTop="75px"
-		android:layout_toRightOf="@id/btnkonto"
+		android:textSize="20dp"
+		android:layout_height="fill_parent"
+              android:layout_width="fill_parent"
+		android:layout_weight="10"
+		android:layout_marginTop="15dp"
 		android:id="@+id/btnokregi" />
+			</TableRow>
+		<TableRow
+			android:layout_height="fill_parent"
+              android:layout_width="fill_parent"
+              android:weightSum ="20">
 	<Button
 		android:text="WSZYSTKIE OKRĘGI"
-		android:textSize="60px"
-		android:layout_width="400px"
-		android:layout_height="300px"
-		android:minWidth="25px"
-		android:minHeight="25px"
-		android:layout_below="@id/btnkonto"
+		android:textSize="20dp"
+		android:layout_height="fill_parent"
+              android:layout_width="fill_parent"
+		android:layout_weight="10"
+		android:layout_marginTop="15dp"
+		android:layout_below="@id/btnokregi"
 		android:id="@+id/btnallokregi" />
 	<Button
 		android:text="REGULAMIN"
-		android:textSize="55px"
-		android:layout_width="400px"
-		android:layout_height="300px"
-		android:minWidth="25px"
-		android:minHeight="25px"
-		android:layout_below="@id/btnokregi"
-		android:layout_toRightOf="@id/btnallokregi"
+		android:textSize="20dp"
+		android:layout_height="fill_parent"
+              android:layout_width="fill_parent"
+		android:layout_weight="10"
+		android:layout_marginTop="15dp"
+		android:layout_below="@id/btnallokregi"
 		android:id="@+id/btnregul" />
+			</TableRow>
+		<TableRow
+			android:layout_height="fill_parent"
+              android:layout_width="fill_parent"
+              android:weightSum ="20">
 	<Button
 		android:text="KATALOG RYB"
-		android:textSize="60px"
-		android:layout_width="400px"
-		android:layout_height="300px"
-		android:minWidth="25px"
-		android:minHeight="25px"
-		android:layout_below="@id/btnallokregi"
+		android:textSize="20dp"
+		android:layout_height="fill_parent"
+              android:layout_width="fill_parent"
+		android:layout_weight="10"
+		android:layout_marginTop="15dp"
+		android:layout_below="@id/btnregul"
 		android:id="@+id/btnryby" />
 	<Button
-		android:text="ZŁOWIONE RYBY"
-		android:textSize="60px"
-		android:layout_width="400px"
-		android:layout_height="300px"
-		android:minWidth="25px"
-		android:minHeight="25px"
-		android:layout_below="@id/btnregul"
-		android:layout_toRightOf="@id/btnryby"
+		android:text="ULUBIONE RYBY"
+		android:textSize="20dp"
+		android:layout_height="fill_parent"
+              android:layout_width="fill_parent"
+		android:layout_weight="10"
+		android:layout_marginTop="15dp"
+		android:layout_below="@id/btnryby"
 		android:id="@+id/btnulub" />
+			</TableRow>
 
+	
 
-
+</TableLayout>
 </RelativeLayout>
