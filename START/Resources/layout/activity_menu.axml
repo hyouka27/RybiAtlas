@@ -15,16 +15,16 @@
 	<Button
 		android:text="TWOJE KONTO"
 		android:textSize="20dp"
-		android:layout_height="100dp"
+		android:layout_height="150dp"
               android:layout_width="fill_parent"
 				android:background="@drawable/menubtn"
 		android:layout_weight="10"
 		android:layout_marginTop="15dp"
 		android:id="@+id/btnkonto" />
 	<Button
-		android:text="OPŁACONE OKRĘGI"
+		android:text="OPŁACONE"
 		android:textSize="20dp"
-		android:layout_height="100dp"
+		android:layout_height="150dp"
               android:layout_width="fill_parent"
 						android:background="@drawable/menubtn"
 		android:layout_weight="10"
@@ -36,9 +36,9 @@
               android:layout_width="fill_parent"
               android:weightSum ="20">
 	<Button
-		android:text="WSZYSTKIE OKRĘGI"
+		android:text="OKRĘGI"
 		android:textSize="20dp"
-		android:layout_height="100dp"
+		android:layout_height="150dp"
               android:layout_width="fill_parent"
 						android:background="@drawable/menubtn"
 		android:layout_weight="10"
@@ -48,7 +48,7 @@
 	<Button
 		android:text="REGULAMIN"
 		android:textSize="20dp"
-		android:layout_height="100dp"
+		android:layout_height="150dp"
               android:layout_width="fill_parent"
 		android:layout_weight="10"
 		android:layout_marginTop="15dp"
@@ -63,7 +63,7 @@
 	<Button
 		android:text="KATALOG RYB"
 		android:textSize="20dp"
-		android:layout_height="100dp"
+		android:layout_height="150dp"
               android:layout_width="fill_parent"
 		android:layout_weight="10"
 		android:layout_marginTop="15dp"
@@ -71,9 +71,9 @@
 						android:background="@drawable/menubtn"
 		android:id="@+id/btnryby" />
 	<Button
-		android:text="ULUBIONE RYBY"
+		android:text="ULUBIONE"
 		android:textSize="20dp"
-		android:layout_height="100dp"
+		android:layout_height="150dp"
               android:layout_width="fill_parent"
 		android:layout_weight="10"
 		android:layout_marginTop="15dp"
