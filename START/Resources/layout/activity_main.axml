@@ -1,48 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-	<TextView
-        android:text="ZALOGUJ SIĘ"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/logowanie" />
+ android:layout_width="match_parent"  
+    android:layout_height="match_parent" 
+	android:background="#B0C4DE"
+    android:gravity="center_horizontal">
+	<LinearLayout  
+        android:layout_width="wrap_content"  
+        android:layout_height="wrap_content"  
+        android:orientation="vertical"  
+        android:gravity="top"  
+        android:layout_gravity="center_vertical"  
+        android:paddingBottom="200dp">  
+		<LinearLayout  
+            android:layout_width="match_parent"  
+            android:layout_height="wrap_content"  
+            android:orientation="horizontal"  
+            android:id="@+id/usernameLinearLayout">  
     <TextView
-        android:text="Numer karty"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
+        android:text="Numer karty: "
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+						android:textStyle="bold"
+		android:textColor="#000000"
         android:id="@+id/textView1" />
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/etusername" />
+			</LinearLayout>
+		<LinearLayout  
+            android:layout_width="match_parent"  
+            android:layout_height="wrap_content"  
+            android:orientation="horizontal"  
+            android:id="@+id/passwordLinearLayout">  
     <TextView
-        android:text="Hasło"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
+        android:text="Hasło: "
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+						android:textStyle="bold"
+		android:textColor="#000000"
         android:id="@+id/textView2" />
     <EditText
         android:inputType="textPassword"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+		android:gravity="top" 
+		android:password="true"
         android:id="@+id/etPass" />
+			</LinearLayout>
     <Button
         android:text="Zaloguj się"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btninsert" />
+					android:textStyle="bold"
+		android:textColor="#000000"
+        android:id="@+id/btninsert"
+		android:background="@drawable/logowaniebtn"/>
 	 <Button
-        android:text="Zarejestruj kartę"
-        android:layout_width="match_parent"
+        android:text="   Zarejestruj kartę   "
+        android:layout_width="fill_parent"
+					android:textStyle="bold"
+		android:textColor="#000000"
         android:layout_height="wrap_content"
-        android:id="@+id/btnrejestracja" />
+        android:id="@+id/btnrejestracja" 
+		android:background="@drawable/rejestracjabtn"/>
 	  <TextView
         android:textAppearance="?android:attr/textAppearanceMedium"
+		
+		android:textColor="#000000"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tvTips" />
+		</LinearLayout>
 </LinearLayout>

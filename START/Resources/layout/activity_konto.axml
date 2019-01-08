@@ -5,45 +5,44 @@
     android:layout_height="match_parent">
 	
 	<TextView
-		android:text="TWOJE KONTO"
+		android:text="IMIĘ"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:textSize="50px"
-		android:textAlignment="center"
-		android:minWidth="25px"
-		android:minHeight="25px"
-		android:id="@+id/textView1" />
-	<TextView
-		android:text="Imię"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
+		android:textStyle="bold"
+		android:textColor="#000000"
 		android:id="@+id/textView2" />
 	 <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/getimie" />
 	<TextView
-		android:text="Nazwisko"
+		android:text="NAZWISKO"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:textStyle="bold"
+		android:textColor="#000000"
 		android:id="@+id/textView3" />
 	 <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/getnazwisko" />
 	<TextView
-		android:text="Numer telefonu"
+		android:text="NUMER TELEFONU"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:textStyle="bold"
+		android:textColor="#000000"
 		android:id="@+id/textView5" />
 	 <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/gettel" />
 	<TextView
-		android:text="Adres e-mail"
+		android:text="ADRES E-MAIL"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:textStyle="bold"
+		android:textColor="#000000"
 		android:id="@+id/textView6" />
 	 <TextView
         android:layout_width="match_parent"
