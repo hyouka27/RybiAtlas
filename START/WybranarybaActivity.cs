@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
 using System.Text;
 using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.Icu.Util;
 using Android.OS;
 using Android.Runtime;
@@ -18,48 +20,83 @@ namespace START
     [Activity(Label = "@string/wybranaryba", Theme = "@style/AppTheme")]
     public class WybranarybaActivity : AppCompatActivity
     {
+        /// <summary>
+        /// Zmienne
+        /// </summary>
         private TextView NazwaRyby1;
         private TextView Indeks1;
         private ImageView Obrazek;
         private TextView Opis1;
         private Button dodaj;
         private Button opisryby;
+        /// <summary>
+        /// Wyciąga obrazek z url.
+        /// </summary>
+        private Bitmap GetImageBitmapFromUrl(string url)
+        {
+            Bitmap imageBitmap = null;
+
+            using (var webClient = new WebClient())
+            {
+                var imageBytes = webClient.DownloadData(url);
+                if (imageBytes != null && imageBytes.Length > 0)
+                {
+                    imageBitmap = BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
+                }
+            }
+
+            return imageBitmap;
+        }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            /// <summary>
+            /// Zawiera opisy elementów przypisane do gui jak i metody.
+            /// </summary>
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_wybranaryba);
             NazwaRyby1 = FindViewById<TextView>(Resource.Id.NazwaRyby1);
             Indeks1 = FindViewById<TextView>(Resource.Id.Indeks1);
-            Obrazek = FindViewById<ImageView>(Resource.Id.Obrazek);
             Opis1 = FindViewById<TextView>(Resource.Id.Opis1);
             dodaj = FindViewById<Button>(Resource.Id.dodaj);
             opisryby = FindViewById<Button>(Resource.Id.opisryby);
             Podajnazwe(LinkBaza.Nazwa);
             Podajobraz(LinkBaza.Nazwa);
+            string linkobrazek = LinkBaza.Obrazek;
+            Obrazek = FindViewById<ImageView>(Resource.Id.Obrazek);
+            var imageBitmap = GetImageBitmapFromUrl(linkobrazek);
+            Obrazek.SetImageBitmap(imageBitmap);
             Podajopis(LinkBaza.Nazwa);
             dodaj.Click += Dodaj_Click;
             opisryby.Click += Opisryby_Click;
         }
-
-private void Opisryby_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Akcja po kliknięciu w przycisk, wyświetla aktywność OpisrybyActivityy.
+        /// </summary>
+        private void Opisryby_Click(object sender, EventArgs e)
         {
             var rybyopis = new Intent(this, typeof(OpisrybyActivityy));
             StartActivity(rybyopis);
         }
 
-private void Dodaj_Click(object sender, System.EventArgs e)
+        /// <summary>
+        /// Akcja po kliknięciu w przycisk, dodaje rybe do listy. 
+        /// </summary>
+        private void Dodaj_Click(object sender, System.EventArgs e)
 {
             InsertInfo2(LinkBaza.Nazwa, LinkBaza.numer, LinkBaza.Obrazek, LinkBaza.Opis);
 }
-
-
-void Podajnazwe(string nazwa)
+        /// <summary>
+        /// Czyta nazwę ryby.
+        /// </summary>
+        void Podajnazwe(string nazwa)
         {
             NazwaRyby1.Text = LinkBaza.Nazwa;
         }
-
-void Podajopis(string nazwar)
+        /// <summary>
+        /// Wyciąga opis ryby z bazy.
+        /// </summary>
+        void Podajopis(string nazwar)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
             {
@@ -86,8 +123,10 @@ void Podajopis(string nazwar)
             }
         }
 
-
-void Podajobraz(string nazwar)
+        /// <summary>
+        /// Wyciąga adres url obrazka z bazy.
+        /// </summary>
+        void Podajobraz(string nazwar)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
             {
@@ -102,11 +141,20 @@ void Podajobraz(string nazwar)
                     foreach (var item in czytaj)
                     {
                         LinkBaza.Obrazek = czytaj.GetString(0);
-                       // Opis1.Text = czytaj.GetString(0);
                     }
                 }
                 catch
                 {
+                    string commandText = "select URLObrazka from rybki WHERE Nazwaryby LIKE @user";
+                    SqlCommand command = new SqlCommand(commandText, conn);
+                    command.Parameters.Add(new SqlParameter("user", nazwar));
+                    command.ExecuteNonQuery();
+                    SqlDataReader czytaj = command.ExecuteReader();
+                    foreach (var item in czytaj)
+                    {
+                        LinkBaza.Obrazek = czytaj.GetString(0);
+
+                    }
                 }
                 finally
                 {
@@ -116,7 +164,9 @@ void Podajobraz(string nazwar)
 
         }
 
-
+        /// <summary>
+        /// Dodaje rybę do listy ulubionych. 
+        /// </summary>
         void InsertInfo2(string nazwaryby, int numerkart, string obrazek, string opis)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
@@ -156,7 +206,6 @@ void Podajobraz(string nazwar)
                         Toast.MakeText(this, info, ToastLength.Long).Show();
                         conn.Close();
                     }
-
                 }
                 catch
                 {

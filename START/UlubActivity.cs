@@ -17,11 +17,17 @@ namespace START
     [Activity(Label = "@string/dodane", Theme = "@style/AppTheme")]
     public class UlubActivity : AppCompatActivity
     {
+        /// <summary>
+        /// Zmienne.
+        /// </summary>
         private List<string> ulub;
         private ListView listaV;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            /// <summary>
+            /// Zawiera opisy elementów przypisane do gui jak i metody.
+            /// </summary>
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_ulub);
             listaV = FindViewById<ListView>(START.Resource.Id.listaV);
@@ -32,6 +38,9 @@ namespace START
             listaV.ItemClick += ListaVClick;
         }
 
+        /// <summary>
+        /// Metoda wyciąga z bazy nazwę ryby i dodaje do listy ulub.
+        /// </summary>
         void Uowsika(int numerkart)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
@@ -60,15 +69,17 @@ namespace START
                 }
             }
         }
+
+        /// <summary>
+        /// Akcja po kliknięciu w przycisk powoduje przeniesienie do widoku Wybranarybaulubione.
+        /// </summary>
         private void ListaVClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            var ulub2 = new Intent(this, typeof(Wybranarybaulubione));
-            StartActivity(ulub2);
+            var ulub23 = new Intent(this, typeof(Wybranarybaulubione));
+            StartActivity(ulub23);
             string ulubiona = ulub[e.Position];
             LinkBaza.Nazwa2 = ulubiona;
             Toast.MakeText(this, ulubiona, ToastLength.Long).Show();
         }
     }
- 
-
 }

@@ -18,14 +18,22 @@ namespace START
     [Activity(Label = "@string/ryby", Theme = "@style/AppTheme")]
     public class RybyActivity : AppCompatActivity
     {
+        /// <summary>
+        /// Zmienne
+        /// </summary>
         private List<string> listaryblista;
         private ListView listaryb;
         public string Nazwaryby { get; set; }
         public string Opis { get; set; }
         public string Indeks { get; set; }
         public string Url_Obrazka { get; set; }
-        protected override void OnCreate(Bundle savedInstanceState)
+  
+    
+    protected override void OnCreate(Bundle savedInstanceState)
         {
+            /// <summary>
+            /// Akcja po kliknięciu w przycisk, dodaje rybe do listy. 
+            /// </summary>
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_ryby);
             listaryb = FindViewById<ListView>(START.Resource.Id.listaryb);
@@ -34,13 +42,17 @@ namespace START
             ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, listaryblista);
             listaryb.Adapter = adapter;
             listaryb.ItemClick += ListaVClick;
+
         }
-   
-       
+
+        /// <summary>
+        /// Wyciąga z jsona nazwę ryby i dodaje do listy.
+        /// </summary>
         public void Pokaryba()
         {
             using (var webClient = new System.Net.WebClient())
             {
+               
                 string json = webClient.DownloadString("http://hyouka27.usermd.net/WENDKA/ryby.json");
                 JObject rybki = JObject.Parse(json);
                 var NazwaRyby = from p in rybki["ryby"] select (string)p["NazwaRyby"];
@@ -50,7 +62,10 @@ namespace START
                 }
             }
         }
-        
+
+        /// <summary>
+        /// Akcja po kliknięciu w przycisk, włącza widok WybranarybaActivity.
+        /// </summary>
         private void ListaVClick(object sender, AdapterView.ItemClickEventArgs e)
         {
 

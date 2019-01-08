@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -17,7 +16,9 @@ namespace START
     [Activity(Label = "@string/wybranyokreg", Theme = "@style/AppTheme")]
     public class WybranyokregActivity : AppCompatActivity
     {
-     
+        /// <summary>
+        /// Zmienne.
+        /// </summary>
         private Button btnlowiska;
         private Button btnregulokreg;
         private Button dodajoplacone;
@@ -26,6 +27,9 @@ namespace START
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            /// <summary>
+            /// Akcja po kliknięciu w przycisk, dodaje rybe do listy. 
+            /// </summary>
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_wybranyokreg);
             btnlowiska = FindViewById<Button>(Resource.Id.btnlowiska);
@@ -46,6 +50,9 @@ namespace START
             dodajoplacone.Click += Dodajoplacone_Click;
         }
 
+        /// <summary>
+        /// Odczytuje nazwę okręgu z bazy.
+        /// </summary>
         void Podajnazweokregu(string numerkart)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
@@ -72,7 +79,9 @@ namespace START
                 }
             }
         }
-
+        /// <summary>
+        /// Odczytuje kwotę składki z bazy.
+        /// </summary>
         void Podajskladke(string numerkart)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
@@ -100,23 +109,34 @@ namespace START
             }
         }
 
+        /// <summary>
+        /// Akcja po kliknięciu w przycisk, łąduje widok listalowisk.
+        /// </summary>
         private void btnlowiska_Click(object sender, System.EventArgs e)
         {
 
             SetContentView(Resource.Layout.activity_listalowisk);
         }
 
+        /// <summary>
+        /// Akcja po kliknięciu w przycisk, Dodaje opłacone okregi do listy.
+        /// </summary>
         private void Dodajoplacone_Click(object sender, System.EventArgs e)
         {
 
             Podajid(LinkBaza.okregbaza);
             InsertInfo2(LinkBaza.licznik, LinkBaza.numer);
         }
+        /// <summary>
+        /// Akcja po kliknięciu w przycisk, włącza regulamin okręgu.
+        /// </summary>
         private void btnregulokreg_Click(object sender, System.EventArgs e)
         {
             SetContentView(Resource.Layout.activity_regulokreg);
         }
-
+        /// <summary>
+        /// Podaje id okregu - używane w innych zapytaniach. 
+        /// </summary>
         void Podajid(string numerkart)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
@@ -143,7 +163,9 @@ namespace START
                 }
             }
         }
-
+        /// <summary>
+        /// Sprawdza czy nie ma dubla, czyli dwa razy opłąconego okręgu, i pozwala dodawać okręg tylko wtedy gdy nie jest opłacony.
+        /// </summary>
         void InsertInfo2(int mail,int numer)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
