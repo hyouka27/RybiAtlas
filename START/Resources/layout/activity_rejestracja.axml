@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-	android:visibility="visible">
-	
+	android:animateLayoutChanges="true"
+
+android:scrollbars="vertical">
+	<LinearLayout
+		android:layout_width="match_parent"  
+        android:layout_height="wrap_content"  
+        android:orientation="vertical" 
+		 android:paddingTop="10dp"
+	 android:paddingLeft="10dp">
 
 	<TextView
-        android:text="ZAREJESTRUJ KARTĘ"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/rejestracja1" />
-
-	<TextView
-        android:text="Numer karty"
+        android:text="Numer karty:"
+		android:textStyle="bold"
+		android:textColor="#000000"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,7 +26,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/nrkarty" />
     <TextView
-        android:text="Hasło"
+        android:text="Hasło:"
+		android:textStyle="bold"
+		android:textColor="#000000"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,7 +40,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/Pass" />
 	<TextView
-		android:text="Imię"
+		android:text="Imię:"
+		android:textStyle="bold"
+		android:textColor="#000000"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/textView7" />
@@ -45,7 +51,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/insimie" />
 	<TextView
-		android:text="Nazwisko"
+		android:text="Nazwisko:"
+		android:textStyle="bold"
+		android:textColor="#000000"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/textView3" />
@@ -54,7 +62,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/insnazwisko" />
 	<TextView
-		android:text="Numer telefonu"
+		android:text="Numer telefonu:"
+		android:textStyle="bold"
+		android:textColor="#000000"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/textView5" />
@@ -63,7 +73,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/instel" />
 	<TextView
-		android:text="Adres e-mail"
+		android:text="Adres e-mail:"
+		android:textStyle="bold"
+		android:textColor="#000000"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:id="@+id/textView6" />
@@ -81,6 +93,7 @@
         android:text="Zarejestruj kartę"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnrejinsert" />
-	
-</LinearLayout>
+        android:id="@+id/btnrejinsert" 
+			android:background="@drawable/rejestracjabtn"/>
+	</LinearLayout>
+</ScrollView>
