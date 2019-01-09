@@ -80,6 +80,16 @@
 						android:background="@drawable/menubtn"
 		android:layout_below="@id/btnryby"
 		android:id="@+id/btnulub" />
+			<Button
+		android:text="SZUKAJ"
+		android:textSize="20dp"
+		android:layout_height="150dp"
+              android:layout_width="fill_parent"
+		android:layout_weight="10"
+		android:layout_marginTop="15dp"
+						android:background="@drawable/menubtn"
+		android:layout_below="@id/btnryby"
+		android:id="@+id/btszuka" />
 			</TableRow>
 
 	

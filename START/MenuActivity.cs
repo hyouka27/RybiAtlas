@@ -24,6 +24,7 @@ namespace START
         private Button btnregul;
         private Button btnryby;
         private Button btnulub;
+        private Button btszuka;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -62,6 +63,7 @@ namespace START
                 var ulub = new Intent(this, typeof(UlubActivity));
                 StartActivity(ulub);
             };
+          
         }
         /// <summary>
         /// Metody odpowiedzialne za działanie przycisków w menu, przekierowują do wybranych aktywnośći.
