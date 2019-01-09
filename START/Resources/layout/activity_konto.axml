@@ -2,14 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-	android:background="#B0C4DE"
+
     android:layout_height="match_parent">
 	
 	<TextView
-		android:text="IMIĘ"
+		android:text="IMIĘ:"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:layout_marginLeft="10dp"
+		android:layout_marginLeft="10dp"		
+		android:layout_marginTop="10dp"
 		android:textStyle="bold"
 		android:textColor="#000000"
 		android:id="@+id/textView2" />
@@ -17,19 +18,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 		android:layout_marginLeft="10dp"
+		android:layout_marginTop="5dp"
+		android:textColor="#000000"
         android:id="@+id/getimie" />
 	<TextView
-		android:text="NAZWISKO"
+		android:text="NAZWISKO:"
 		android:layout_width="match_parent"
 		android:layout_marginLeft="10dp"
 		android:layout_height="wrap_content"
 		android:textStyle="bold"
 		android:textColor="#000000"
+		android:layout_marginTop="10dp"
 		android:id="@+id/textView3" />
 	 <TextView
         android:layout_width="match_parent"
 		android:layout_marginLeft="10dp"
         android:layout_height="wrap_content"
+		android:textColor="#000000"
+		android:layout_marginTop="5dp"
         android:id="@+id/getnazwisko" />
 	<TextView
 		android:text="NUMER TELEFONU"
@@ -38,11 +44,14 @@
 		android:layout_marginLeft="10dp"
 		android:textStyle="bold"
 		android:textColor="#000000"
+		android:layout_marginTop="10dp"
 		android:id="@+id/textView5" />
 	 <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 		android:layout_marginLeft="10dp"
+		android:textColor="#000000"
+		android:layout_marginTop="5dp"
         android:id="@+id/gettel" />
 	<TextView
 		android:text="ADRES E-MAIL"
@@ -51,11 +60,13 @@
 		android:layout_marginLeft="10dp"
 		android:textStyle="bold"
 		android:textColor="#000000"
+		android:layout_marginTop="10dp"
 		android:id="@+id/textView6" />
 	 <TextView
         android:layout_width="match_parent"
 		android:layout_marginLeft="10dp"
         android:layout_height="wrap_content"
+		android:layout_marginTop="5dp"
         android:id="@+id/getmail" />
 	
 
