@@ -31,7 +31,7 @@ namespace START
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.szukaj);
             szuka = FindViewById<EditText>(Resource.Id.szuka);
-            Szukaj2 = FindViewById<EditText>(Resource.Id.Szukaj2);
+            Szukaj2 = FindViewById<TextView>(Resource.Id.Szukaj2);
             bszukaj = FindViewById<Button>(Resource.Id.bszukaj);
             bszukaj.Click += delegate {
                 using (SqlConnection conn = new SqlConnection(LinkBaza.connString))

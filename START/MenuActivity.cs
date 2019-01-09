@@ -63,7 +63,12 @@ namespace START
                 var ulub = new Intent(this, typeof(UlubActivity));
                 StartActivity(ulub);
             };
-          
+            btszuka = FindViewById<Button>(Resource.Id.btszuka);
+            btszuka.Click += delegate {
+                var szuka = new Intent(this, typeof(SZUKAJ));
+                StartActivity(szuka);
+            };
+
         }
         /// <summary>
         /// Metody odpowiedzialne za działanie przycisków w menu, przekierowują do wybranych aktywnośći.
@@ -91,6 +96,10 @@ namespace START
         private void btnkonto_ulub(object sender, System.EventArgs e)
         {
             SetContentView(Resource.Layout.activity_ulub);
+        }
+        private void btnszuka(object sender, System.EventArgs e)
+        {
+            SetContentView(Resource.Layout.szukaj);
         }
     }
 }

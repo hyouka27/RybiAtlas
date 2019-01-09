@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical"
-		android:layout_width="fill_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:animateLayoutChanges="true"
+	android:scrollbars="vertical">
 
-		android:layout_height="fill_parent">
+	<RelativeLayout 
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
 	<TableLayout
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"	>
+
 		<TableRow
-			android:layout_height="fill_parent"
-              android:layout_width="fill_parent"
-              android:weightSum ="20">
+		android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:weightSum ="20">
 	
 	<Button
 		android:text="TWOJE KONTO"
@@ -74,25 +82,32 @@
 		android:text="ULUBIONE"
 		android:textSize="20dp"
 		android:layout_height="150dp"
-              android:layout_width="fill_parent"
+        android:layout_width="fill_parent"
 		android:layout_weight="10"
 		android:layout_marginTop="15dp"
-						android:background="@drawable/menubtn"
+		android:background="@drawable/menubtn"
 		android:layout_below="@id/btnryby"
 		android:id="@+id/btnulub" />
+			</TableRow>
+		<TableRow
+			android:layout_height="fill_parent"
+              android:layout_width="fill_parent"
+              android:weightSum ="10">	
 			<Button
 		android:text="SZUKAJ"
 		android:textSize="20dp"
 		android:layout_height="150dp"
-              android:layout_width="fill_parent"
+        android:layout_width="fill_parent"
 		android:layout_weight="10"
 		android:layout_marginTop="15dp"
-						android:background="@drawable/menubtn"
-		android:layout_below="@id/btnryby"
+		android:background="@drawable/menubtn"
+		android:layout_below="@id/btnulub"
 		android:id="@+id/btszuka" />
+			
 			</TableRow>
 
 	
 
 </TableLayout>
 </RelativeLayout>
+	</ScrollView>
