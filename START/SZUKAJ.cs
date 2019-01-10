@@ -33,35 +33,60 @@ namespace START
             szuka = FindViewById<EditText>(Resource.Id.szuka);
             Szukaj2 = FindViewById<TextView>(Resource.Id.Szukaj2);
             bszukaj = FindViewById<Button>(Resource.Id.bszukaj);
-            bszukaj.Click += delegate {
-                using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
+            bszukaj.Click += Bszukaj_Click;
+
+          
+        }
+
+        private void Bszukaj_Click(object sender, EventArgs e)
+        {
+            string szuka2 = szuka.Text;
+            LinkBaza.Nazwa = szuka2;
+            Podajrybe(szuka2);
+        }
+        void Podajrybe(string nazwa)
+        {
+            using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
+            {
+                conn.Open();
+                string Output = "";
+                try
                 {
-                    conn.Open();
-                    try
+                    string commandText ="select count(*) as cnt FROM rybki WHERE Nazwaryby LIKE @test";
+                    SqlCommand command = new SqlCommand(commandText, conn);
+                    command.Parameters.Add(new SqlParameter("test", nazwa));
+                    command.ExecuteNonQuery();
+                    SqlDataReader czytaj = command.ExecuteReader();
+                    while (czytaj.Read())
                     {
-                        string commandText = "SELECT Nazwaryby FROM rybki WHERE Nazwaryby LIKE @test";
-                        SqlCommand command = new SqlCommand(commandText, conn);
-                        command.Parameters.Add(new SqlParameter("test", szuka));
-                        command.ExecuteNonQuery();
-                        SqlDataReader czytaj = command.ExecuteReader();
-                        while (czytaj.Read())
-                        {
-                            Szukaj2.Text = czytaj.GetString(0);
-                        }
+                        Output = Output + czytaj.GetValue(0);
+                    }
+                    int test;
+                    test = Int32.Parse(Output);
+                    if (test == 1)
+                    {
                         var ulub23 = new Intent(this, typeof(WybranarybaActivity));
                         StartActivity(ulub23);
                     }
-                    catch
+                    else
                     {
                         string info = "Nie ma takiej ryby";
                         Toast.MakeText(this, info, ToastLength.Long).Show();
+
                     }
-                    finally
-                    {
-                        conn.Close();
-                    }
+
                 }
-            };
+                catch
+                {
+                    string info = "Nie ma takiej ryby";
+                    Toast.MakeText(this, info, ToastLength.Long).Show();
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+
         }
     }
 }
