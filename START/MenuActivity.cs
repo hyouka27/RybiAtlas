@@ -25,7 +25,7 @@ namespace START
         private Button btnryby;
         private Button btnulub;
         private Button btszuka;
-
+        
         protected override void OnCreate(Bundle savedInstanceState)
         {
             /// <summary>
@@ -100,6 +100,13 @@ namespace START
         private void btnszuka(object sender, System.EventArgs e)
         {
             SetContentView(Resource.Layout.szukaj);
+        }
+        /// <summary>
+        /// Blokuje cofanie na strzałkach systemowych, tak by trzymało sesję. 
+        /// </summary>
+        public override void OnBackPressed()
+        {
+            return;
         }
     }
 }
