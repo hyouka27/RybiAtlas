@@ -25,7 +25,8 @@ namespace START
         private Button btnryby;
         private Button btnulub;
         private Button btszuka;
-        
+        private Button btaparat;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             /// <summary>
@@ -69,6 +70,12 @@ namespace START
                 StartActivity(szuka);
             };
 
+            btaparat = FindViewById<Button>(Resource.Id.btaparat);
+            btaparat.Click += delegate {
+                Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+                StartActivity(intent);
+                
+            };
         }
         /// <summary>
         /// Metody odpowiedzialne za działanie przycisków w menu, przekierowują do wybranych aktywnośći.

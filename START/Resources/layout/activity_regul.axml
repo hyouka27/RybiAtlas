@@ -8,13 +8,12 @@
 	android:paddingRight="10dp"
 	>
 	<TextView
-		android:text="REGULAMIN"
+		
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:textSize="50px"
-		android:textAlignment="center"
+				android:textColor="#000000"
 		android:minWidth="25px"
 		android:minHeight="25px"
-		android:id="@+id/textView1" />
+		android:id="@+id/regul" />
 
 </ScrollView>

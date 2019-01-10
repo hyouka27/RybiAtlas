@@ -92,7 +92,7 @@
 		<TableRow
 			android:layout_height="fill_parent"
               android:layout_width="fill_parent"
-              android:weightSum ="10">	
+              android:weightSum ="20">	
 			<Button
 		android:text="SZUKAJ"
 		android:textSize="20dp"
@@ -103,6 +103,16 @@
 		android:background="@drawable/menubtn"
 		android:layout_below="@id/btnulub"
 		android:id="@+id/btszuka" />
+				<Button
+		android:text="Aparat"
+		android:textSize="20dp"
+		android:layout_height="150dp"
+        android:layout_width="fill_parent"
+		android:layout_weight="10"
+		android:layout_marginTop="15dp"
+		android:background="@drawable/menubtn"
+		android:layout_below="@id/btszuka"
+		android:id="@+id/btaparat" />
 			
 			</TableRow>
 
