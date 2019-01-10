@@ -33,17 +33,22 @@ namespace START
             szuka = FindViewById<EditText>(Resource.Id.szuka);
             Szukaj2 = FindViewById<TextView>(Resource.Id.Szukaj2);
             bszukaj = FindViewById<Button>(Resource.Id.bszukaj);
-            bszukaj.Click += Bszukaj_Click;
-
-          
+            bszukaj.Click += Bszukaj_Click; 
         }
 
+        /// <summary>
+        /// Przycisk do analizy wyszukiwanej ryby
+        /// </summary>
         private void Bszukaj_Click(object sender, EventArgs e)
         {
             string szuka2 = szuka.Text;
             LinkBaza.Nazwa = szuka2;
             Podajrybe(szuka2);
         }
+
+        /// <summary>
+        /// Metoda wyszukująca rybe w bazie i włączająca ekran z widokiem ryby jak znajdzie a jak nie to ładująca komunikat
+        /// </summary>
         void Podajrybe(string nazwa)
         {
             using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
@@ -74,7 +79,6 @@ namespace START
                         Toast.MakeText(this, info, ToastLength.Long).Show();
 
                     }
-
                 }
                 catch
                 {
@@ -86,7 +90,6 @@ namespace START
                     conn.Close();
                 }
             }
-
         }
     }
 }
