@@ -77,6 +77,7 @@ namespace START
                 
             };
         }
+
         /// <summary>
         /// Metody odpowiedzialne za działanie przycisków w menu, przekierowują do wybranych aktywnośći.
         /// </summary>

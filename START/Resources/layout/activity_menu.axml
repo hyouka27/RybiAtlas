@@ -88,12 +88,12 @@
 		android:background="@drawable/menubtn"
 		android:layout_below="@id/btnryby"
 		android:id="@+id/btnulub" />
-			</TableRow>
+		</TableRow>
 		<TableRow
 			android:layout_height="fill_parent"
               android:layout_width="fill_parent"
               android:weightSum ="20">	
-			<Button
+		<Button
 		android:text="SZUKAJ"
 		android:textSize="20dp"
 		android:layout_height="150dp"
@@ -103,7 +103,7 @@
 		android:background="@drawable/menubtn"
 		android:layout_below="@id/btnulub"
 		android:id="@+id/btszuka" />
-				<Button
+	   <Button
 		android:text="Aparat"
 		android:textSize="20dp"
 		android:layout_height="150dp"
@@ -113,11 +113,7 @@
 		android:background="@drawable/menubtn"
 		android:layout_below="@id/btszuka"
 		android:id="@+id/btaparat" />
-			
 			</TableRow>
-
-	
-
 </TableLayout>
 </RelativeLayout>
-	</ScrollView>
+</ScrollView>
