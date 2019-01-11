@@ -129,14 +129,16 @@ namespace START
             var status = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Camera);
             if (status == PermissionStatus.Granted)
             {
-            }
-            else
-            {
                 btaparat.Click += delegate
                 {
                     Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
                     StartActivity(intent);
                 };
+            }
+            else
+            {
+                string info = "Włącz uprawnienia do aparatu w ustawieniach systemowych";
+                Toast.MakeText(this, info, ToastLength.Long).Show();
             }
 
         }
