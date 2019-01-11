@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -9,6 +10,8 @@ using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
 
 namespace START
 {
@@ -69,13 +72,13 @@ namespace START
                 var szuka = new Intent(this, typeof(SZUKAJ));
                 StartActivity(szuka);
             };
-
             btaparat = FindViewById<Button>(Resource.Id.btaparat);
-            btaparat.Click += delegate {
+            btaparat.Click += delegate
+            {
                 Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
                 StartActivity(intent);
-                
             };
+            GetPermissions();
         }
 
         /// <summary>
@@ -115,6 +118,27 @@ namespace START
         public override void OnBackPressed()
         {
             return;
+        }
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+        {
+            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+        private async void GetPermissions()
+        {
+            var status = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Camera);
+            if (status == PermissionStatus.Granted)
+            {
+            }
+            else
+            {
+                btaparat.Click += delegate
+                {
+                    Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+                    StartActivity(intent);
+                };
+            }
+
         }
     }
 }

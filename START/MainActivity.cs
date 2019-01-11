@@ -16,12 +16,13 @@ namespace START
         /// <summary>
         /// Zmienne
         /// </summary>
+        /// 
+        
         private EditText etusername;
         private EditText etpass;
         private Button btninsert;
         private TextView tvTips;
         private Button btnrejestracja;
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             /// <summary>
@@ -38,7 +39,7 @@ namespace START
             btnrejestracja.Click += delegate {
             var rejestracja = new Intent(this, typeof(RejestracjaActivity));
             StartActivity(rejestracja);
-            };
+            };   
         }
 
         /// <summary>
@@ -110,6 +111,7 @@ namespace START
         {
         SetContentView(Resource.Layout.activity_rejestracja);
         }
+
     }
 }
 
