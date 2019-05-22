@@ -1,0 +1,64 @@
+0000000000000000000000000000000000000000 6ee8c97c70e5eb13718a54bb39ad1ffa6e7339a4 nsawek <snowacoll@hotmail.com> 1544894051 +0100	update by push
+6ee8c97c70e5eb13718a54bb39ad1ffa6e7339a4 cccb542deefff8c3926fe4e122964854d01e90ea nsawek <snowacoll@hotmail.com> 1544905148 +0100	update by push
+cccb542deefff8c3926fe4e122964854d01e90ea 751c0bce44747a461ee453948a957dd938073a81 nsawek <snowacoll@hotmail.com> 1544965798 +0100	pull --verbose --progress --no-edit --no-stat --recurse-submodules=no origin: fast-forward
+751c0bce44747a461ee453948a957dd938073a81 bbd040f1f06d039a369cbf8a7dd786a90f43704a nsawek <snowacoll@hotmail.com> 1544965861 +0100	update by push
+bbd040f1f06d039a369cbf8a7dd786a90f43704a 6080b4e90d480e0bd39ab26b9a75c6d3132b8cf1 nsawek <snowacoll@hotmail.com> 1544989112 +0100	update by push
+6080b4e90d480e0bd39ab26b9a75c6d3132b8cf1 fae87f2cd450d34f803781ec4c999d3248e625f4 nsawek <snowacoll@hotmail.com> 1544990275 +0100	update by push
+fae87f2cd450d34f803781ec4c999d3248e625f4 e6851dfcab7ad83d672bbb5971ea36401bc89d6a nsawek <snowacoll@hotmail.com> 1545240583 +0100	update by push
+e6851dfcab7ad83d672bbb5971ea36401bc89d6a 05bfffa844d1e0f5bccb56d0da96d3fd810984c0 nsawek <snowacoll@hotmail.com> 1545245381 +0100	update by push
+05bfffa844d1e0f5bccb56d0da96d3fd810984c0 15b984eea408a86d4abab435259af669571cf826 nsawek <snowacoll@hotmail.com> 1545245861 +0100	update by push
+15b984eea408a86d4abab435259af669571cf826 1e8b74e376fd4d46fa029622dbd4f5b30cbfcb48 nsawek <snowacoll@hotmail.com> 1545246647 +0100	update by push
+1e8b74e376fd4d46fa029622dbd4f5b30cbfcb48 0f4579feb35eb21fed2776523bbeeeb4b04d4501 nsawek <snowacoll@hotmail.com> 1545745922 +0100	fetch --progress --verbose origin: fast-forward
+0f4579feb35eb21fed2776523bbeeeb4b04d4501 fe1ecc28b4738f253cc0e87d092309b00be95877 nsawek <snowacoll@hotmail.com> 1545746145 +0100	update by push
+fe1ecc28b4738f253cc0e87d092309b00be95877 e78a4a2dba7dd00a1a1c7492d2fb16f7384d59ed nsawek <snowacoll@hotmail.com> 1545746651 +0100	update by push
+e78a4a2dba7dd00a1a1c7492d2fb16f7384d59ed 3a42ae81771c0205be0478f07867a0ae372c19be nsawek <snowacoll@hotmail.com> 1545749614 +0100	update by push
+3a42ae81771c0205be0478f07867a0ae372c19be 9a6d9a9b981a947dbc88c44517e6d868de1768f6 nsawek <snowacoll@hotmail.com> 1545769246 +0100	update by push
+9a6d9a9b981a947dbc88c44517e6d868de1768f6 429aa358ebac3d2655f34d5e91d6e717106b412e nsawek <snowacoll@hotmail.com> 1545771328 +0100	update by push
+429aa358ebac3d2655f34d5e91d6e717106b412e 8c13e9e466a2effb2da670e02d37f91e74fbb389 nsawek <snowacoll@hotmail.com> 1546106634 +0100	fetch --progress --verbose origin: fast-forward
+8c13e9e466a2effb2da670e02d37f91e74fbb389 1e4978f9483ef38688871ce59f5d38b05f3d9b21 nsawek <snowacoll@hotmail.com> 1546167860 +0100	fetch --progress --verbose origin: fast-forward
+1e4978f9483ef38688871ce59f5d38b05f3d9b21 1d052f39a68b747e4bc52e37579c6c6dd969d9dd nsawek <snowacoll@hotmail.com> 1546179218 +0100	update by push
+1d052f39a68b747e4bc52e37579c6c6dd969d9dd ac532cc3f07abce0f1bba3946721f15cc52a9464 nsawek <snowacoll@hotmail.com> 1546182582 +0100	update by push
+ac532cc3f07abce0f1bba3946721f15cc52a9464 11a9381e9dd921c5855bf072fbc82b448603a6b7 nsawek <snowacoll@hotmail.com> 1546198328 +0100	update by push
+11a9381e9dd921c5855bf072fbc82b448603a6b7 9dff0345ae74674ab86a69f164fd6e7c450d79e1 nsawek <snowacoll@hotmail.com> 1546202493 +0100	update by push
+9dff0345ae74674ab86a69f164fd6e7c450d79e1 1bd1f8b67ef5b535a6ac2c1d96bfd1492883da7b nsawek <snowacoll@hotmail.com> 1546251230 +0100	fetch --progress --verbose origin: fast-forward
+1bd1f8b67ef5b535a6ac2c1d96bfd1492883da7b 000c9686efe735e0ef8a839bd6e93a85ec389740 nsawek <snowacoll@hotmail.com> 1546255795 +0100	update by push
+000c9686efe735e0ef8a839bd6e93a85ec389740 ebdb90f7384870182f739ee70d6ecbdeec375b0f nsawek <snowacoll@hotmail.com> 1546261164 +0100	update by push
+ebdb90f7384870182f739ee70d6ecbdeec375b0f 2e0140a82ee55e44e05493d0a83ac0f0245d4f7a nsawek <snowacoll@hotmail.com> 1546265642 +0100	update by push
+2e0140a82ee55e44e05493d0a83ac0f0245d4f7a d47edcb238a50c3f9c69fd9a1d3c31e1315ff286 nsawek <snowacoll@hotmail.com> 1546273513 +0100	fetch --progress --verbose origin: fast-forward
+d47edcb238a50c3f9c69fd9a1d3c31e1315ff286 9bd913467d09121a44006ac7e3f6d2c1fd950b2c nsawek <snowacoll@hotmail.com> 1546277733 +0100	update by push
+9bd913467d09121a44006ac7e3f6d2c1fd950b2c 891fb9d7444832b7bb785eb5f43c123289bb1712 nsawek <snowacoll@hotmail.com> 1546277973 +0100	update by push
+891fb9d7444832b7bb785eb5f43c123289bb1712 882628f1b317d368dc1621297749760510978ac3 nsawek <snowacoll@hotmail.com> 1546360614 +0100	update by push
+882628f1b317d368dc1621297749760510978ac3 8496827645f67fefaa06613fcb827667e1ffeaf4 nsawek <snowacoll@hotmail.com> 1546368898 +0100	update by push
+8496827645f67fefaa06613fcb827667e1ffeaf4 cc2ab43d2258697c70c76f084cd1a3d70e2dfdde nsawek <snowacoll@hotmail.com> 1546370759 +0100	update by push
+cc2ab43d2258697c70c76f084cd1a3d70e2dfdde 8920e637a698b63db902ec0c4e79ef5c50d785ea nsawek <snowacoll@hotmail.com> 1546447149 +0100	fetch --progress --verbose origin: fast-forward
+8920e637a698b63db902ec0c4e79ef5c50d785ea a321e0371462aead7b7eef57dec541f85a8f942a nsawek <snowacoll@hotmail.com> 1546457711 +0100	update by push
+a321e0371462aead7b7eef57dec541f85a8f942a 356279c8f13178428a3ee4d823098b6667eb311e nsawek <snowacoll@hotmail.com> 1546544009 +0100	update by push
+356279c8f13178428a3ee4d823098b6667eb311e b7f5873548ce8b98a0dfd405f3243a982ef4438b nsawek <snowacoll@hotmail.com> 1546617502 +0100	fetch --progress --verbose origin: fast-forward
+b7f5873548ce8b98a0dfd405f3243a982ef4438b 82213bf5bb7a7b7dfc81d34842c3bf27009026b1 nsawek <snowacoll@hotmail.com> 1546628868 +0100	update by push
+82213bf5bb7a7b7dfc81d34842c3bf27009026b1 d0a94e05ec7714e3c76618cd215a62b8c42b53a8 nsawek <snowacoll@hotmail.com> 1546631466 +0100	fetch --progress --verbose origin: fast-forward
+d0a94e05ec7714e3c76618cd215a62b8c42b53a8 e6ea7faf5bcc5c64c9f0c2ee749de624a6fb4bb1 nsawek <snowacoll@hotmail.com> 1546631675 +0100	update by push
+e6ea7faf5bcc5c64c9f0c2ee749de624a6fb4bb1 ae861566a37ef90c30558427c7569a6b399d0ffc nsawek <snowacoll@hotmail.com> 1546636214 +0100	update by push
+ae861566a37ef90c30558427c7569a6b399d0ffc 83454b077f249c81bad933c3345179ac51dd5fd0 nsawek <snowacoll@hotmail.com> 1546721601 +0100	fetch --progress --verbose origin: fast-forward
+83454b077f249c81bad933c3345179ac51dd5fd0 89e8db6b91d2bb09e1371f1c200dcf5d5a4b237a nsawek <snowacoll@hotmail.com> 1546727200 +0100	update by push
+89e8db6b91d2bb09e1371f1c200dcf5d5a4b237a a8fd005583c1d46e986f66c5de15c9b528375ea9 nsawek <snowacoll@hotmail.com> 1546728789 +0100	update by push
+a8fd005583c1d46e986f66c5de15c9b528375ea9 6ff9e6d4dc0b7c5ae1127b09a23dd2959c20450e nsawek <snowacoll@hotmail.com> 1546762803 +0100	update by push
+6ff9e6d4dc0b7c5ae1127b09a23dd2959c20450e 15ad1b1574ae3c37b8dec2ca69b701adf99e7838 nsawek <snowacoll@hotmail.com> 1546763809 +0100	update by push
+15ad1b1574ae3c37b8dec2ca69b701adf99e7838 28b10ae2f8728ed49d89683bd98b4c791ef3b812 nsawek <snowacoll@hotmail.com> 1546764340 +0100	update by push
+28b10ae2f8728ed49d89683bd98b4c791ef3b812 1915d3d74fc845e17941a8aee9ddfa4aa0f5b934 nsawek <snowacoll@hotmail.com> 1546922551 +0100	fetch --progress --verbose origin: fast-forward
+1915d3d74fc845e17941a8aee9ddfa4aa0f5b934 9efe94594f0d5314208d55548bcd39256cc45af8 nsawek <snowacoll@hotmail.com> 1546973586 +0100	fetch --progress --verbose origin: fast-forward
+9efe94594f0d5314208d55548bcd39256cc45af8 fae637340a7d48ebb95b512c085b9745d73de184 nsawek <snowacoll@hotmail.com> 1546973615 +0100	update by push
+fae637340a7d48ebb95b512c085b9745d73de184 1252b83f320c0f677b3b675f6aed93c574f71622 nsawek <snowacoll@hotmail.com> 1546981408 +0100	fetch --progress --verbose origin: fast-forward
+1252b83f320c0f677b3b675f6aed93c574f71622 21d08886aa90d63afd5fd61cb6e1a9549af8c1dc nsawek <snowacoll@hotmail.com> 1546982839 +0100	fetch --progress --verbose origin: fast-forward
+21d08886aa90d63afd5fd61cb6e1a9549af8c1dc 159686b2b5d7769fd1c92c66cc4525d090ae97c1 nsawek <snowacoll@hotmail.com> 1547045337 +0100	fetch --progress --verbose origin: fast-forward
+159686b2b5d7769fd1c92c66cc4525d090ae97c1 181b92ad78a1badb1565f817262189a78f26f733 nsawek <snowacoll@hotmail.com> 1547049465 +0100	fetch --progress --verbose origin: fast-forward
+181b92ad78a1badb1565f817262189a78f26f733 02eeb262ddb786d9d83340d8491e0865e5e17d8b nsawek <snowacoll@hotmail.com> 1547058316 +0100	fetch --progress --verbose origin: fast-forward
+02eeb262ddb786d9d83340d8491e0865e5e17d8b a12599542caaeb47e694eb051a5f3a08f3f271d8 nsawek <snowacoll@hotmail.com> 1547061184 +0100	update by push
+a12599542caaeb47e694eb051a5f3a08f3f271d8 b5347a77dc3a3d417a034053b5cb7f94ead5207b nsawek <snowacoll@hotmail.com> 1547134516 +0100	fetch --progress --verbose origin: fast-forward
+b5347a77dc3a3d417a034053b5cb7f94ead5207b 1b86e8ad1a1b58e4144dd828779b39392f73a635 nsawek <snowacoll@hotmail.com> 1547137857 +0100	update by push
+1b86e8ad1a1b58e4144dd828779b39392f73a635 b724e0058ed5450ae6f1479574c5b450b061f307 nsawek <snowacoll@hotmail.com> 1547138099 +0100	update by push
+b724e0058ed5450ae6f1479574c5b450b061f307 8cee6a380390907079e131a9d90ac7a50f7062e6 nsawek <snowacoll@hotmail.com> 1547139062 +0100	update by push
+8cee6a380390907079e131a9d90ac7a50f7062e6 1a81a4021bc555ac01bff30577b4a1a9a534f557 nsawek <snowacoll@hotmail.com> 1547148460 +0100	fetch --progress --verbose origin: fast-forward
+1a81a4021bc555ac01bff30577b4a1a9a534f557 784e2a32147dbff69c1fa1525643699c98aaa0b1 nsawek <snowacoll@hotmail.com> 1547150202 +0100	update by push
+784e2a32147dbff69c1fa1525643699c98aaa0b1 23ecef24008ff81c6c0b53f50a9c97a8f6b6c9bb nsawek <snowacoll@hotmail.com> 1547150965 +0100	update by push
+23ecef24008ff81c6c0b53f50a9c97a8f6b6c9bb 1864bd79e89e4d193af377cae0a76458b801c99b nsawek <snowacoll@hotmail.com> 1547227028 +0100	update by push
+1864bd79e89e4d193af377cae0a76458b801c99b fc984023fb2fd370acf28306175c89def902e626 nsawek <snowacoll@hotmail.com> 1547236414 +0100	update by push
