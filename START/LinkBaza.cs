@@ -27,6 +27,6 @@ namespace START
     public static int Indeks;
     public static string lowsikobaza;
     public static string okregbaza;
-    public static string connString = @"workstation id=testowa.mssql.somee.com;packet size=4096;user id=hyouka27_SQLLogin_1;pwd=1234567*;data source=testowa.mssql.somee.com;persist security info=False;initial catalog=testowa";
+    public static string connString = @"workstation id=77.55.213.238;packet size=4096;user id=kinga;pwd=1234567*;data source=testowa.mssql.somee.com;persist security info=False;initial catalog=WENDKA";
     }
 }
