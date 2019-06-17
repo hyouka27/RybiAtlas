@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:animateLayoutChanges="true"
+	android:scrollbars="vertical">
+
+	<RelativeLayout 
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<TableLayout
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"	>
+
+		<TableRow
+		android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:weightSum ="20">
+	
+	<Button
+		android:text="TWOJE KONTO"
+		android:textSize="20dp"
+		android:layout_height="150dp"
+              android:layout_width="fill_parent"
+				
+		android:layout_weight="10"
+		android:layout_marginTop="15dp"
+		android:id="@+id/btnkonto" />
+	<Button
+		android:text="OPŁACONE"
+		android:textSize="20dp"
+		android:layout_height="150dp"
+              android:layout_width="fill_parent"
+						
+		android:layout_weight="10"
+		android:layout_marginTop="15dp"
+		android:id="@+id/btnokregi" />
+			</TableRow>
+		<TableRow
+			android:layout_height="fill_parent"
+              android:layout_width="fill_parent"
+              android:weightSum ="20">
+	<Button
+		android:text="OKRĘGI"
+		android:textSize="20dp"
+		android:layout_height="150dp"
+              android:layout_width="fill_parent"
+						
+		android:layout_weight="10"
+		android:layout_marginTop="15dp"
+		android:layout_below="@id/btnokregi"
+		android:id="@+id/btnallokregi" />
+	<Button
+		android:text="REGULAMIN"
+		android:textSize="20dp"
+		android:layout_height="150dp"
+              android:layout_width="fill_parent"
+		android:layout_weight="10"
+		android:layout_marginTop="15dp"
+						
+		android:layout_below="@id/btnallokregi"
+		android:id="@+id/btnregul" />
+			</TableRow>
+		<TableRow
+			android:layout_height="fill_parent"
+              android:layout_width="fill_parent"
+              android:weightSum ="20">
+	<Button
+		android:text="KATALOG RYB"
+		android:textSize="20dp"
+		android:layout_height="150dp"
+              android:layout_width="fill_parent"
+		android:layout_weight="10"
+		android:layout_marginTop="15dp"
+		android:layout_below="@id/btnregul"
+						
+		android:id="@+id/btnryby" />
+	<Button
+		android:text="ULUBIONE"
+		android:textSize="20dp"
+		android:layout_height="150dp"
+        android:layout_width="fill_parent"
+		android:layout_weight="10"
+		android:layout_marginTop="15dp"
+		
+		android:layout_below="@id/btnryby"
+		android:id="@+id/btnulub" />
+		</TableRow>
+		<TableRow
+			android:layout_height="fill_parent"
+              android:layout_width="fill_parent"
+              android:weightSum ="20">	
+		<Button
+		android:text="SZUKAJ"
+		android:textSize="20dp"
+		android:layout_height="150dp"
+        android:layout_width="fill_parent"
+		android:layout_weight="10"
+		android:layout_marginTop="15dp"
+		
+		android:layout_below="@id/btnulub"
+		android:id="@+id/btszuka" />
+	   <Button
+		android:text="Aparat"
+		android:textSize="20dp"
+		android:layout_height="150dp"
+        android:layout_width="fill_parent"
+		android:layout_weight="10"
+		android:layout_marginTop="15dp"
+		
+		android:layout_below="@id/btszuka"
+		android:id="@+id/btaparat" />
+			</TableRow>
+</TableLayout>
+</RelativeLayout>
+</ScrollView>

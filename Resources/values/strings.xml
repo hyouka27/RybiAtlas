@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">RybiAtlas</string>
+  <string name="allokregi">Lista okręgów</string>
+  <string name="konto">TWOJE KONTO</string>
+  <string name="listalowisk">Lista łowisk</string>
+  <string name="menu">MENU</string>
+  <string name="okregi">Lista opłaconych okręgów</string>
+  <string name="app_nameregul">REGULAMIN</string>
+  <string name="action_settings">Settings</string>
+  <string name="opisryby">Opis ryby</string>
+  <string name="regulokreg">Regulamin okręgu</string>
+  <string name="rejestracja">ZAREJESTRUJ SIĘ</string>
+  <string name="ryby">Lista ryb</string>
+  <string name="dodane">Lista dodanych ryb</string>
+  <string name="wybranaryba">Szczegóły ryby</string>
+  <string name="wybranelowisko">Szczegóły łowiska</string>
+  <string name="wybranyokreg">Szczegóły okręgu</string>
+  <string name="logowanie">LOGOWANIE</string>
+</resources>
