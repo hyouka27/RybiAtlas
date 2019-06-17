@@ -27,6 +27,6 @@ namespace RybiAtlas
     public static int Indeks;
     public static string lowsikobaza;
     public static string okregbaza;
-    public static string connString = @"workstation id=77.55.213.238;packet size=4096;user id=kinga;pwd=test1!@W;data source=testowa.mssql.somee.com;persist security info=False;initial catalog=WENDKA";
+    public static string connString = @"workstation id=77.55.213.238;packet size=4096;user id=kinga;pwd=test1!@W;data source=77.55.213.238;persist security info=False;initial catalog=WENDKA";
     }
 }
