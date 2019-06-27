@@ -94,18 +94,8 @@ namespace RybiAtlas
                 }
                 catch
                 {
-                    string commandText = "insert into userI(numerkarty,haslo,imie,nazwisko,telefon,email) values(@user,@pass,@imie,@nazwisko,@tel,@mail)";
-                    SqlCommand command = new SqlCommand(commandText, conn);
-                    command.Parameters.Add(new SqlParameter("user", numerkart));
-                    command.Parameters.Add(new SqlParameter("pass", pass2));
-                    command.Parameters.Add(new SqlParameter("imie", imie));
-                    command.Parameters.Add(new SqlParameter("nazwisko", nazwisko));
-                    command.Parameters.Add(new SqlParameter("tel", tel));
-                    command.Parameters.Add(new SqlParameter("mail", mail));
-                    command.ExecuteNonQuery();
-                    conn.Close();
-                    var menu = new Intent(this, typeof(MenuActivity));
-                    StartActivity(menu);
+                    string info = "Brak dostępu do sieci.";
+                    Toast.MakeText(this, info, ToastLength.Long).Show();
                 }
                 finally
                 {
