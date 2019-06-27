@@ -56,7 +56,7 @@ namespace RybiAtlas
                 conn.Open();
                 try
                 {
-                    string commandText = "SELECT Nazwaryb FROM rybki";
+                    string commandText = "SELECT Nazwaryby FROM rybki";
                     SqlCommand command = new SqlCommand(commandText, conn);
                     command.ExecuteNonQuery();
                     SqlDataReader czytaj = command.ExecuteReader();
