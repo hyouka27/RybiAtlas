@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -50,7 +51,31 @@ namespace RybiAtlas
         /// </summary>
         public void Pokaryba()
         {
-           
+            using (SqlConnection conn = new SqlConnection(LinkBaza.connString))
+            {
+                conn.Open();
+                try
+                {
+                    string commandText = "SELECT Nazwaryb FROM rybki";
+                    SqlCommand command = new SqlCommand(commandText, conn);
+                    command.ExecuteNonQuery();
+                    SqlDataReader czytaj = command.ExecuteReader();
+                    foreach (var item in czytaj)
+                    {
+                        int i = 0;
+                        listaryblista.Add(czytaj.GetString(i));
+                        i++;
+                    }
+                }
+                catch
+                {
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+
         }
 
         /// <summary>
