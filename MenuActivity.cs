@@ -20,13 +20,13 @@ namespace RybiAtlas
         /// Zmienne
         /// </summary>
         private Button btnkonto;
-        private Button btnokregi;
-        private Button btnallokregi;
-        private Button btnregul;
+        // private Button btnokregi;
+        // private Button btnallokregi;
+        //private Button btnregul;
         private Button btnryby;
         private Button btnulub;
         private Button btszuka;
-        private Button btaparat;
+      //  private Button btaparat;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -40,7 +40,7 @@ namespace RybiAtlas
                 var konto = new Intent(this, typeof(KontoActivity));
                 StartActivity(konto);
             };
-            btnokregi = FindViewById<Button>(Resource.Id.btnokregi);
+          /*  btnokregi = FindViewById<Button>(Resource.Id.btnokregi);
             btnokregi.Click += delegate {
                 var okregi = new Intent(this, typeof(OkregiActivity));
                 StartActivity(okregi);
@@ -54,7 +54,7 @@ namespace RybiAtlas
             btnregul.Click += delegate {
                 var regul = new Intent(this, typeof(RegulActivity));
                 StartActivity(regul);
-            };
+            };*/
             btnryby = FindViewById<Button>(Resource.Id.btnryby);
             btnryby.Click += delegate {
                 var ryby = new Intent(this, typeof(RybyActivity));
@@ -70,12 +70,12 @@ namespace RybiAtlas
                 var szuka = new Intent(this, typeof(SZUKAJ));
                 StartActivity(szuka);
             };
-            btaparat = FindViewById<Button>(Resource.Id.btaparat);
+           /* btaparat = FindViewById<Button>(Resource.Id.btaparat);
             btaparat.Click += delegate
             {
                 Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
                 StartActivity(intent);
-            };
+            };*/
         }
 
         /// <summary>
