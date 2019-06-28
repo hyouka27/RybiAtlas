@@ -134,7 +134,7 @@ namespace RybiAtlas
                 conn.Open();
                 try
                 {
-                    string commandText = "select URLObrazka from Ulubione WHERE Nazwaryby LIKE @user";
+                    string commandText = "select URLObrazka from rybki WHERE Nazwaryby LIKE @user";
                     SqlCommand command = new SqlCommand(commandText, conn);
                     command.Parameters.Add(new SqlParameter("user", nazwar));
                     command.ExecuteNonQuery();
@@ -146,16 +146,6 @@ namespace RybiAtlas
                 }
                 catch
                 {
-                    string commandText = "select obrazek from Ulubione WHERE Nazwaryby LIKE @user";
-                    SqlCommand command = new SqlCommand(commandText, conn);
-                    command.Parameters.Add(new SqlParameter("user", nazwar));
-                    command.ExecuteNonQuery();
-                    SqlDataReader czytaj = command.ExecuteReader();
-                    foreach (var item in czytaj)
-                    {
-                        LinkBaza.Obrazek = czytaj.GetString(0);
-
-                    }
                 }
                 finally
                 {

@@ -141,27 +141,19 @@ namespace RybiAtlas
                     foreach (var item in czytaj)
                     {
                         LinkBaza.Obrazek = czytaj.GetString(0);
+                        Console.WriteLine("Test");
                     }
                 }
                 catch
                 {
-                    string commandText = "select URLObrazka from rybki WHERE Nazwaryby LIKE @user";
-                    SqlCommand command = new SqlCommand(commandText, conn);
-                    command.Parameters.Add(new SqlParameter("user", nazwar));
-                    command.ExecuteNonQuery();
-                    SqlDataReader czytaj = command.ExecuteReader();
-                    foreach (var item in czytaj)
-                    {
-                        LinkBaza.Obrazek = czytaj.GetString(0);
-
-                    }
+                    string info4 = "Brak ryby.";
+                    Toast.MakeText(this, info4, ToastLength.Long).Show();
                 }
                 finally
                 {
                     conn.Close();
                 }
             }
-
         }
 
         /// <summary>
