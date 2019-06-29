@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 	android:animateLayoutChanges="true"
-
 android:scrollbars="vertical">
 	<LinearLayout
 		android:layout_width="match_parent"  
@@ -14,8 +13,8 @@ android:scrollbars="vertical">
 	 android:paddingLeft="10dp">
 
 	<TextView
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
 		android:textStyle="bold"
 		android:textColor="#000000"
 		android:gravity="center"
@@ -27,18 +26,24 @@ android:scrollbars="vertical">
 		android:layout_height="wrap_content"
 		android:textStyle="bold"
 		android:textColor="#000000"
+            android:layout_below="@id/NazwaRyby1"
 		android:id="@+id/Indeks1" />
          <Space
             android:layout_width="match_parent"
-            android:layout_height="20dp"/>
+            android:layout_height="20dp"
+        android:paddingTop="20dp"/>
 	<ImageView
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:id="@+id/Obrazek" 
-		android:paddingBottom="15dp"/>
+        android:paddingBottom="15dp"
+       android:paddingTop="30dp"
+        android:scaleX="5"
+        android:layout_below="@id/Indeks1"
+            android:scaleY="5"
+		android:id="@+id/Obrazek" />
          <Space
             android:layout_width="match_parent"
-            android:layout_height="20dp"/>
+            android:layout_height="100dp"/>
         <Button
 		android:id="@+id/opisryby"
 		android:layout_width="match_parent"
@@ -47,6 +52,7 @@ android:scrollbars="vertical">
 		android:textSize="30dp"
             android:layout_marginRight="10dp"
 			android:textStyle="bold"
+           android:layout_below="@id/Obrazek"
 		android:textColor="#000000"/>
         <Space
             android:layout_width="match_parent"
@@ -56,9 +62,9 @@ android:scrollbars="vertical">
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:text="Usuń z Ulubionych"
+         android:textStyle="bold"
             android:layout_marginRight="10dp"
-            android:textSize="25dp"
-			android:textStyle="bold"/>
+            android:textSize="25dp"/>
 
 </LinearLayout>
 	</ScrollView>
