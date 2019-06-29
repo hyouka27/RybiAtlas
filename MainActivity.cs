@@ -82,8 +82,6 @@ namespace RybiAtlas
                         while (czytaj.Read())
                         {
                             Output = Output + czytaj.GetValue(0);
-                        string info = "Baza padła";
-                        Toast.MakeText(this, info, ToastLength.Long).Show();
                     }
                         int test;
                         test = Int32.Parse(Output);
