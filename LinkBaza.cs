@@ -27,6 +27,6 @@ namespace RybiAtlas
     public static int Indeks;
     public static string lowsikobaza;
     public static string okregbaza;
-    public static string connString=@"Server=77.55.213.238;Database=Wendka;User Id = aga; Password=t4tyu!@W";
+    public static string connString=@"Server=77.55.213.238;Database=Wendka;User Id=ryba; Password=t4tyu!@W";
     }
 }

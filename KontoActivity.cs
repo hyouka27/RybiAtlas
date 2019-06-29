@@ -14,7 +14,9 @@ using Android.Widget;
 namespace RybiAtlas
 {
     [Activity(Label = "@string/konto", Theme = "@style/AppTheme")]
+#pragma warning disable CS1591 // Brak komentarza XML dla widocznego publicznie typu lub składowej
     public class KontoActivity : AppCompatActivity
+#pragma warning restore CS1591 // Brak komentarza XML dla widocznego publicznie typu lub składowej
     {
         /// <summary>
         /// Zmienne
@@ -23,7 +25,9 @@ namespace RybiAtlas
         private TextView nazwisko;
         private TextView tel;
         private TextView mail;
+#pragma warning disable CS1591 // Brak komentarza XML dla widocznego publicznie typu lub składowej
         protected override void OnCreate(Bundle savedInstanceState)
+#pragma warning restore CS1591 // Brak komentarza XML dla widocznego publicznie typu lub składowej
         {
             /// <summary>
             /// Zawiera opisy elementów przypisane do gui jak i metody.

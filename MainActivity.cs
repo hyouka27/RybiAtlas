@@ -7,6 +7,9 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using Android.Content;
+using Android.Support.V4.Content;
+using Android;
+using Android.Content.PM;
 
 namespace RybiAtlas
 {
@@ -68,30 +71,32 @@ namespace RybiAtlas
             {
                 try
                 {
-                    conn.Open();
-                    string Output = "";
-                    string commandText = "select count(*) as cnt from userI WHERE numerkarty=@user AND haslo LIKE @pass";
-                    SqlCommand command = new SqlCommand(commandText, conn);
-                    command.Parameters.Add(new SqlParameter("user", numerkart));
-                    command.Parameters.Add(new SqlParameter("pass", pass2));
-                    command.ExecuteNonQuery();
-                    SqlDataReader czytaj = command.ExecuteReader();
-                    while (czytaj.Read())
-                    {
-                        Output = Output + czytaj.GetValue(0);
+                        conn.Open();
+                        string Output = "";
+                        string commandText = "select count(*) as cnt from userI WHERE numerkarty=@user AND haslo LIKE @pass";
+                        SqlCommand command = new SqlCommand(commandText, conn);
+                        command.Parameters.Add(new SqlParameter("user", numerkart));
+                        command.Parameters.Add(new SqlParameter("pass", pass2));
+                        command.ExecuteNonQuery();
+                        SqlDataReader czytaj = command.ExecuteReader();
+                        while (czytaj.Read())
+                        {
+                            Output = Output + czytaj.GetValue(0);
+                        string info = "Baza padła";
+                        Toast.MakeText(this, info, ToastLength.Long).Show();
                     }
-                    int test;
-                    test = Int32.Parse(Output);
-                    if (test == 1)
-                    {
-                        var menu = new Intent(this, typeof(MenuActivity));
-                        StartActivity(menu);
-                    }
-                    else
-                    {
-                        tvTips.Text = "Nie możesz się zalogować, popraw dane.";
+                        int test;
+                        test = Int32.Parse(Output);
+                        if (test == 1)
+                        {
+                            var menu = new Intent(this, typeof(MenuActivity));
+                            StartActivity(menu);
+                        }
+                        else
+                        {
+                            tvTips.Text = "Nie możesz się zalogować, popraw dane.";
+                        } 
 
-                    }
                 }
                 catch
                 {
