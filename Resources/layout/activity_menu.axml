@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
 	android:animateLayoutChanges="true"
 	android:scrollbars="vertical">
 
@@ -14,57 +14,74 @@
 	<TableLayout
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"	>
-            <TableRow
-			android:layout_height="fill_parent"
-              android:layout_width="fill_parent"
-              android:weightSum ="20">
+    <TableRow
+		android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:weightSum ="20">
 	<Button
 		android:text="KATALOG RYB"
-		android:textSize="20dp"
-		android:layout_height="150dp"
-              android:layout_width="fill_parent"
-		android:layout_weight="10"
-		android:layout_marginTop="15dp"
-						
-		android:id="@+id/btnryby" />
-	<Button
-		android:text="ULUBIONE"
-		android:textSize="20dp"
+		android:textSize="30dp"
 		android:layout_height="150dp"
         android:layout_width="fill_parent"
-		android:layout_weight="10"
-		android:layout_marginTop="15dp"
-		android:id="@+id/btnulub" />
+		android:layout_weight="20"
+        android:background="#98FB98"
+		android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+		android:id="@+id/btnryby" />
 		</TableRow>
-
+            <TableRow
+		android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:weightSum ="20">
+            <Button
+		android:text="ULUBIONE"
+		android:textSize="30dp"
+		android:layout_height="150dp"
+        android:layout_width="fill_parent"
+		android:layout_weight="20"
+		android:layout_marginTop="5dp"
+        android:background="#98FB98"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+		android:id="@+id/btnulub" />
+                </TableRow>
 		<TableRow
 		android:layout_height="fill_parent"
         android:layout_width="fill_parent"
         android:weightSum ="20">
 	
-	<Button
-		android:text="TWOJE KONTO"
-		android:textSize="20dp"
-		android:layout_height="150dp"
-              android:layout_width="fill_parent"
-				
-		android:layout_weight="10"
-		android:layout_marginTop="15dp"
-		android:id="@+id/btnkonto" />
-
     <Button
          android:text="SZUKAJ"
-         android:textSize="20dp"
+         android:textSize="30dp"
          android:layout_height="150dp"
          android:layout_width="fill_parent"
-         android:layout_weight="10"
-         android:layout_marginTop="15dp"
+         android:layout_weight="20"
+         android:background="#98FB98"
+         android:layout_marginTop="5dp"
+         android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
          android:layout_below="@id/btnulub"
          android:id="@+id/btszuka" />
 	   
 			</TableRow>
 		
-		
+            <TableRow
+		android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:weightSum ="20">
+		<Button
+		android:text="TWOJE KONTO"
+		android:textSize="30dp"
+		android:layout_height="150dp"
+        android:layout_width="fill_parent"
+		android:layout_weight="20"
+		android:layout_marginTop="5dp"
+        android:background="#98FB98"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+		android:id="@+id/btnkonto" />
+            </TableRow>
 		
 </TableLayout>
 </RelativeLayout>

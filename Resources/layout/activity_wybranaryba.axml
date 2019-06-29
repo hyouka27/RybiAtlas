@@ -19,31 +19,46 @@ android:scrollbars="vertical">
 			android:textStyle="bold"
 		android:textColor="#000000"
 			android:gravity="center"
-			android:textSize="30dp"
+			android:textSize="40dp"
 		android:id="@+id/NazwaRyby1" />
 	
 	<TextView
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+            android:textStyle="bold"
+		android:textColor="#000000"
 		android:id="@+id/Indeks1" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"/>
 	<ImageView
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:paddingBottom="10dp"
+		android:paddingBottom="15dp"
 		android:id="@+id/Obrazek" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"/>
 	<Button
 		android:id="@+id/opisryby"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:text="OPIS RYBY" 
+        android:textSize="30dp"
+            android:layout_marginRight="10dp"
 			android:textStyle="bold"
 		android:textColor="#000000"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp"/>
 	<Button
 		android:id="@+id/dodaj"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:text="DODAJ DO ULUBIONYCH" 
 			android:textStyle="bold"
+            android:layout_marginRight="10dp"
+             android:textSize="25dp"
 		android:textColor="#000000"/>
 	
 </LinearLayout>

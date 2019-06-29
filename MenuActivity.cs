@@ -85,14 +85,8 @@ namespace RybiAtlas
         {
             SetContentView(Resource.Layout.activity_konto);
         }
-        private void btnokregi_Click(object sender, System.EventArgs e)
-        {
-            SetContentView(Resource.Layout.activity_okregi);
-        }
-        private void btnallokregi_Click(object sender, System.EventArgs e)
-        {
-            SetContentView(Resource.Layout.activity_allokregi);
-        }
+        
+        
         private void btnregul_Click(object sender, System.EventArgs e)
         {
             SetContentView(Resource.Layout.activity_regul);

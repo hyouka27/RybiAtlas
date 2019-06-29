@@ -66,16 +66,12 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AllokregiActivity.cs" />
     <Compile Include="KontoActivity.cs" />
     <Compile Include="LinkBaza.cs" />
-    <Compile Include="ListalowiskActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MenuActivity.cs" />
-    <Compile Include="OkregiActivity.cs" />
     <Compile Include="OpisrybyActivity.cs" />
     <Compile Include="RegulActivity.cs" />
-    <Compile Include="RegulokregActivity.cs" />
     <Compile Include="RejestracjaActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -84,8 +80,6 @@
     <Compile Include="UlubActivity.cs" />
     <Compile Include="WybranarybaActivity.cs" />
     <Compile Include="Wybranarybaulubione.cs" />
-    <Compile Include="WybranelowiskoActivity.cs" />
-    <Compile Include="WybranyokregActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -128,28 +122,16 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\activity_allokregi.axml" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\layout\activity_konto.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\activity_listalowisk.axml" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\layout\activity_menu.axml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\activity_okregi.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\activity_opisryby.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\activity_regul.axml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\activity_regulokreg.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\activity_rejestracja.axml" />
@@ -165,12 +147,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\activity_wybranaryba.axml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\activity_wybranelowisko.axml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\activity_wybranyokreg.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\szukaj.axml" />

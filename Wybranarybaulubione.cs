@@ -35,6 +35,7 @@ namespace RybiAtlas
         private ImageView Obrazek;
         private TextView Opis1;
         private Button usun;
+        private Button opisryby;
         /// <summary>
         /// Wyciąga obrazek z url.
         /// </summary>
@@ -65,6 +66,7 @@ namespace RybiAtlas
             Indeks1 = FindViewById<TextView>(Resource.Id.Indeks1);
             Opis1 = FindViewById<TextView>(Resource.Id.Opis1);
             usun= FindViewById<Button>(Resource.Id.usun);
+            opisryby = FindViewById<Button>(Resource.Id.opisryby);
             Podajobraz(LinkBaza.Nazwa2);
             string linkobrazek = LinkBaza.Obrazek;
             Obrazek = FindViewById<ImageView>(Resource.Id.Obrazek);
@@ -73,7 +75,17 @@ namespace RybiAtlas
             Podajnazwe(LinkBaza.Nazwa2);
             Podajopis(LinkBaza.Nazwa2);
             usun.Click += Usun_Click;
-            
+            opisryby.Click += Opisryby_Click;
+
+        }
+
+        /// <summary>
+        /// Akcja po kliknięciu w przycisk, wyświetla aktywność OpisrybyActivityy.
+        /// </summary>
+        private void Opisryby_Click(object sender, EventArgs e)
+        {
+            var rybyopis = new Intent(this, typeof(OpisrybyActivityy));
+            StartActivity(rybyopis);
         }
 
         /// <summary>
@@ -104,14 +116,14 @@ namespace RybiAtlas
                 conn.Open();
                 try
                 {
-                    string commandText = "select Opis from Ulubione WHERE Nazwaryby LIKE @user";
+                    string commandText = "select Opis from rybki WHERE Nazwaryby LIKE @user";
                     SqlCommand command = new SqlCommand(commandText, conn);
                     command.Parameters.Add(new SqlParameter("user", nazwar));
                     command.ExecuteNonQuery();
                     SqlDataReader czytaj = command.ExecuteReader();
                     foreach (var item in czytaj)
                     {
-                        Opis1.Text = czytaj.GetString(0);
+                        LinkBaza.Opis = czytaj.GetString(0);
                     }
                 }
                 catch

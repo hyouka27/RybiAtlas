@@ -48,7 +48,7 @@ namespace RybiAtlas
                 conn.Open();
                 try
                 {
-                    string commandText = "SELECT Nazwaryby FROM Ulubione WHERE numerkart LIKE @test";
+                    string commandText = "SELECT nazwaryby FROM Ulubione WHERE numerkart LIKE @test";
                     SqlCommand command = new SqlCommand(commandText, conn);
                     command.Parameters.Add(new SqlParameter("test", numerkart));
                     command.ExecuteNonQuery();

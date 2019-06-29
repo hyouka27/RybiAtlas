@@ -18,6 +18,7 @@ android:scrollbars="vertical">
 		android:layout_marginTop="10dp"
 		android:textStyle="bold"
 		android:textColor="#000000"
+        android:textSize="20dp"
 		android:id="@+id/textView2" />
 	 <TextView
         android:layout_width="match_parent"
@@ -25,6 +26,7 @@ android:scrollbars="vertical">
 		android:layout_marginLeft="10dp"
 		android:layout_marginTop="5dp"
 		android:textColor="#000000"
+        android:textSize="20dp"
         android:id="@+id/getimie" />
 	<TextView
 		android:text="NAZWISKO:"
@@ -33,6 +35,7 @@ android:scrollbars="vertical">
 		android:layout_height="wrap_content"
 		android:textStyle="bold"
 		android:textColor="#000000"
+        android:textSize="20dp"
 		android:layout_marginTop="10dp"
 		android:id="@+id/textView3" />
 	 <TextView
@@ -40,6 +43,7 @@ android:scrollbars="vertical">
 		android:layout_marginLeft="10dp"
         android:layout_height="wrap_content"
 		android:textColor="#000000"
+        android:textSize="20dp"
 		android:layout_marginTop="5dp"
         android:id="@+id/getnazwisko" />
 	<TextView
@@ -49,6 +53,7 @@ android:scrollbars="vertical">
 		android:layout_marginLeft="10dp"
 		android:textStyle="bold"
 		android:textColor="#000000"
+        android:textSize="20dp"
 		android:layout_marginTop="10dp"
 		android:id="@+id/textView5" />
 	 <TextView
@@ -56,6 +61,7 @@ android:scrollbars="vertical">
         android:layout_height="wrap_content"
 		android:layout_marginLeft="10dp"
 		android:textColor="#000000"
+        android:textSize="20dp"
 		android:layout_marginTop="5dp"
         android:id="@+id/gettel" />
 	<TextView
@@ -65,6 +71,7 @@ android:scrollbars="vertical">
 		android:layout_marginLeft="10dp"
 		android:textStyle="bold"
 		android:textColor="#000000"
+        android:textSize="20dp"
 		android:layout_marginTop="10dp"
 		android:id="@+id/textView6" />
 	 <TextView
@@ -72,6 +79,7 @@ android:scrollbars="vertical">
 		android:layout_marginLeft="10dp"
         android:layout_height="wrap_content"
 		android:layout_marginTop="5dp"
+        android:textSize="20dp"
         android:id="@+id/getmail" />
 	
 </LinearLayout>

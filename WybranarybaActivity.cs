@@ -167,7 +167,7 @@ namespace RybiAtlas
                 try
                 {
                     string Output = "";
-                    string commandText2 = "select count(*) as cnt from Ulubione WHERE numerkart=@user AND Nazwaryby LIKE @nazwa";
+                    string commandText2 = "select count(*) as cnt from Ulubione WHERE numerkart=@user AND nazwaryby LIKE @nazwa";
                     SqlCommand command2 = new SqlCommand(commandText2, conn);
                     command2.Parameters.Add(new SqlParameter("user", numerkart));
                     command2.Parameters.Add(new SqlParameter("nazwa", nazwaryby));
@@ -187,12 +187,10 @@ namespace RybiAtlas
                     }
                     else
                     {
-                        string commandText = "insert into Ulubione (Nazwaryby,numerkart,obrazek,opis) values(@user,@pass,@imie,@nazwisko)";
+                        string commandText = "insert into Ulubione (nazwaryby,numerkart) values(@user,@pass)";
                         SqlCommand command = new SqlCommand(commandText, conn);
                         command.Parameters.Add(new SqlParameter("user", nazwaryby));
                         command.Parameters.Add(new SqlParameter("pass", numerkart));
-                        command.Parameters.Add(new SqlParameter("imie", obrazek));
-                        command.Parameters.Add(new SqlParameter("nazwisko", opis));
                         command.ExecuteNonQuery();
                         string info = "Dodano do ulubionych.";
                         Toast.MakeText(this, info, ToastLength.Long).Show();
@@ -203,12 +201,10 @@ namespace RybiAtlas
                 {
                     conn.Close();
                     conn.Open();
-                    string commandText = "insert into Ulubione (Nazwaryby,numerkart,obrazek,opis) values(@user,@pass,@imie,@nazwisko)";
+                    string commandText = "insert into Ulubione (nazwaryby,numerkart) values(@user,@pass)";
                     SqlCommand command = new SqlCommand(commandText, conn);
                     command.Parameters.Add(new SqlParameter("user", nazwaryby));
                     command.Parameters.Add(new SqlParameter("pass", numerkart));
-                    command.Parameters.Add(new SqlParameter("imie", obrazek));
-                    command.Parameters.Add(new SqlParameter("nazwisko", opis));
                     command.ExecuteNonQuery();
                     string info2 = "Dodano do ulubionych.";
                     Toast.MakeText(this, info2, ToastLength.Long).Show();
