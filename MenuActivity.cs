@@ -40,21 +40,6 @@ namespace RybiAtlas
                 var konto = new Intent(this, typeof(KontoActivity));
                 StartActivity(konto);
             };
-          /*  btnokregi = FindViewById<Button>(Resource.Id.btnokregi);
-            btnokregi.Click += delegate {
-                var okregi = new Intent(this, typeof(OkregiActivity));
-                StartActivity(okregi);
-            };
-            btnallokregi = FindViewById<Button>(Resource.Id.btnallokregi);
-            btnallokregi.Click += delegate {
-                var allokregi = new Intent(this, typeof(AllokregiActivity));
-                StartActivity(allokregi);
-            };
-            btnregul = FindViewById<Button>(Resource.Id.btnregul);
-            btnregul.Click += delegate {
-                var regul = new Intent(this, typeof(RegulActivity));
-                StartActivity(regul);
-            };*/
             btnryby = FindViewById<Button>(Resource.Id.btnryby);
             btnryby.Click += delegate {
                 var ryby = new Intent(this, typeof(RybyActivity));
@@ -70,12 +55,6 @@ namespace RybiAtlas
                 var szuka = new Intent(this, typeof(SZUKAJ));
                 StartActivity(szuka);
             };
-           /* btaparat = FindViewById<Button>(Resource.Id.btaparat);
-            btaparat.Click += delegate
-            {
-                Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-                StartActivity(intent);
-            };*/
         }
 
         /// <summary>
@@ -85,7 +64,6 @@ namespace RybiAtlas
         {
             SetContentView(Resource.Layout.activity_konto);
         }
-        
         
         private void btnregul_Click(object sender, System.EventArgs e)
         {

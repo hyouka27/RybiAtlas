@@ -47,7 +47,7 @@ namespace RybiAtlas
         }
 
         /// <summary>
-        /// Wyciąga z jsona nazwę ryby i dodaje do listy.
+        /// Czyta nazwę ryby z bazy
         /// </summary>
         public void Pokaryba()
         {

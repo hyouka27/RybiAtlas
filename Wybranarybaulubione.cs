@@ -84,7 +84,7 @@ namespace RybiAtlas
         /// </summary>
         private void Opisryby_Click(object sender, EventArgs e)
         {
-            var rybyopis = new Intent(this, typeof(OpisrybyActivityy));
+            var rybyopis = new Intent(this, typeof(OpisrybyActivityyu));
             StartActivity(rybyopis);
         }
 
@@ -190,12 +190,6 @@ namespace RybiAtlas
                 
                 catch
                 {
-                    string commandText = "DELETE FROM Ulubione WHERE numerkart=@pass AND Nazwaryby=@tel";
-                    SqlCommand command = new SqlCommand(commandText, conn);
-                    command.Parameters.Add(new SqlParameter("pass", numerkart));
-                    command.Parameters.Add(new SqlParameter("tel", indeks));
-                    command.ExecuteNonQuery();
-                    conn.Close();
                     string info = "Usunięto z ulubionych.";
                     Toast.MakeText(this, info, ToastLength.Long).Show();
                 }

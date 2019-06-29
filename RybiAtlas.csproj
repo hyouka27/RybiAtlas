@@ -70,6 +70,7 @@
     <Compile Include="LinkBaza.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MenuActivity.cs" />
+    <Compile Include="OpisrybyActivityu.cs" />
     <Compile Include="OpisrybyActivity.cs" />
     <Compile Include="RegulActivity.cs" />
     <Compile Include="RejestracjaActivity.cs" />

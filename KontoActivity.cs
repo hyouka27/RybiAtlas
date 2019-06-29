@@ -116,8 +116,6 @@ namespace RybiAtlas
                     while (czytaj.Read())
                     {
                         tel.Text = czytaj.GetInt32(0).ToString();
-
-
                     }
                 }
                 catch

@@ -14,7 +14,7 @@ using Android.Widget;
 namespace RybiAtlas
 {
     [Activity(Label = "@string/opisryby", Theme = "@style/AppTheme")]
-    public class OpisrybyActivityy : AppCompatActivity
+    public class OpisrybyActivityyu : AppCompatActivity
     {
         private TextView Opis1;
 
@@ -23,7 +23,7 @@ namespace RybiAtlas
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_opisryby);
             Opis1 = FindViewById<TextView>(RybiAtlas.Resource.Id.Opis1);
-            Podajopis(LinkBaza.Nazwa);
+            Podajopis(LinkBaza.Nazwa2);
         }
 
         void Podajopis(string nazwar)
@@ -56,4 +56,6 @@ namespace RybiAtlas
             }
         }
     }
+
+
 }
